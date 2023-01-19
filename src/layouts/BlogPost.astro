@@ -1,0 +1,34 @@
+---
+import Base from './Base.astro'
+
+export interface Props {
+  content: {
+    title: string
+    description: string
+    pubDate?: string
+    updatedDate?: string
+    heroImage?: string
+  }
+}
+
+const {
+  content: { title, description, pubDate, updatedDate, heroImage },
+} = Astro.props
+---
+
+<Base title={title} description={description}>
+  <article>
+    {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+    <h1 class="title">{title}</h1>
+    {pubDate && <time>{pubDate}</time>}
+    {
+      updatedDate && (
+        <div>
+          Last updated on <time>{updatedDate}</time>
+        </div>
+      )
+    }
+    <hr />
+    <slot />
+  </article>
+</Base>
