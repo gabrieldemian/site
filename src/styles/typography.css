@@ -1,0 +1,93 @@
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1920,22,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+@layer base {
+  :root {
+    --step--2: clamp(0.70rem, calc(0.80rem + -0.08vw), 0.78rem);
+    --step--1: clamp(0.94rem, calc(0.94rem + 0.00vw), 0.94rem);
+    --step-0: clamp(1.13rem, calc(1.10rem + 0.13vw), 1.25rem);
+    --step-1: clamp(1.35rem, calc(1.29rem + 0.32vw), 1.67rem);
+    --step-2: clamp(1.62rem, calc(1.50rem + 0.60vw), 2.22rem);
+    --step-3: clamp(1.94rem, calc(1.74rem + 1.02vw), 2.96rem);
+    --step-4: clamp(2.33rem, calc(2.01rem + 1.61vw), 3.95rem);
+    --step-5: clamp(2.80rem, calc(2.31rem + 2.46vw), 5.26rem);
+  }
+
+  p {
+    font-size: var(--step-0);
+    line-height: 1.5em;
+    @apply text-text font-poppins;
+  }
+
+  h1, h2, h3, h4, h5, h6, label {
+    @apply text-subtext1 font-bold;
+    line-height: 1em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-corben font-semibold;
+  }
+
+  h1 {
+    font-size: var(--step-5);
+  }
+
+  h2 {
+    font-size: var(--step-4);
+  }
+
+  h3 {
+    font-size: var(--step-3);
+  }
+
+  h4 {
+    font-size: var(--step-2);
+  }
+
+  h5 {
+    font-size: var(--step-1);
+  }
+
+  h6 {
+    font-size: var(--step-0);
+  }
+
+  a {
+    font-family: var(--step-0);
+    @apply text-flamingo relative;
+  }
+
+  section a:visited, article a:visited {
+    @apply text-mauve;
+  }
+
+  a.link-hover:after {
+    content: "";
+    @apply duration-300 bottom-0 left-0 w-0 h-[1px] absolute bg-gradient-to-r from-rosewater to-peach;
+  }
+
+  a.link-hover:hover:after {
+    @apply w-full;
+  }
+
+  article.container {
+    @apply mx-auto max-w-[60ch] p-2 md:p-0;
+  }
+
+  article > h1, h2, h3, h4, h5, h6 {
+    @apply mb-5;
+  }
+
+  article p {
+    @apply mb-5;
+  }
+
+  small, .small {
+    line-height: 1.5em;
+    @apply text-text font-poppins;
+    font-size: var(--step--1);
+  }
+
+  *::selection {
+    @apply bg-surface2;
+  }
+}
