@@ -2,8 +2,8 @@
 import '@fontsource/corben'
 import '@fontsource/poppins'
 import BaseHead from '../components/BaseHead.astro'
-import Footer from '../components/Footer.astro'
-import Header from '../components/Header.astro'
+import Footer from '../components/ui/Footer.astro'
+import Header from '../components/ui/Header.astro'
 import { SITE_DESCRIPTION, SITE_TITLE } from '../config'
 
 export interface Props {
@@ -23,10 +23,12 @@ const { title, description } = Astro.props
     />
   </head>
   <body>
-    <Header title={SITE_TITLE} />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <div class="container min-h-screen flex flex-col justify-between">
+      <div>
+        <Header title={SITE_TITLE} />
+        <slot />
+      </div>
+      <Footer />
+    </div>
   </body>
 </html>

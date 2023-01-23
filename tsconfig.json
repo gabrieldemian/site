@@ -1,11 +1,18 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "baseUrl": ".",
     "paths": {
-      "@/*": "src/*"
-    }
+      "~/*": "./src/*"
+    },
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "include": [
+      "src"
+    ]
   }
 }
