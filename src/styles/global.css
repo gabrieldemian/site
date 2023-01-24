@@ -12,14 +12,18 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  scroll-behavior: smooth;
+}
+
 body {
 	font-family: Poppins, Verdana, sans-serif;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-  @apply bg-crust text-text;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @apply bg-crust text-text;
 }
 section {
   @apply my-10;
