@@ -4,33 +4,50 @@ import { Button } from '~/components/ui'
 ---
 
 <Base>
-  <article>
-    <h5>🧑‍🚀 Hello, Visitor!</h5>
-    <p>
-      I'm a <strong>fullstack-engineer</strong> with a focus on front-end. I also
-      good with Rust language, web3 integration, basic cryptography and web standards
-      (transport protocols, caching, OS, etc.)
-    </p>
+  <section>
+    <article>
+      <div class="container my-20">
+        <h4>
+          Hello! I'm a <strong class="text-white">fullstack engineer</strong> 🚀
+          with a focus on frontend. Working with Typescript, React, Solid, and Rust.
+        </h4>
+        <div class="flex justify-between mt-10">
+          <div class="flex gap-2">
+            <a href="#/about">
+              <Button>About me</Button>
+            </a>
+            <Button>Work</Button>
+          </div>
+          <a href="https://twitter.com/gabdem13"> Twitter</a>
+        </div>
+      </div>
+    </article>
+  </section>
 
-    <p>
-      I have over <strong>5 years</strong> of professional experience, having worked
-      for companies and projects from around the globe.
-    </p>
+  <section class="bg-base rounded-md py-10" id="about">
+    <article class="container">
+      <h5 class="text-white">About me</h5>
+      <p>
+        I started to program when I was 15 years old, and I never stopped since
+        that day. When I was 18 I began my Technologist Degree in System
+        Analysis and Development while working in an internship.
+      </p>
+      <p>
+        When I graduated, I started to work as a fullstack developer, I was
+        working with bleeding-edge technology from the very beggining of my
+        career.
+      </p>
+      <p>
+        Besides working with tech, I have a passion for languages. I'm fluent in
+        English, and I'm currently learning German (A2 Level).
+      </p>
+      <Button variant="outlined">Resume.pdf</Button>
+    </article>
+  </section>
 
-    <p>
-      I have developed <strong>complex apps</strong> from the frontend to the backend,
-      <strong>mentored teams</strong> of frontend developers, created awesome looking
-      animations, and more.
-    </p>
-
-    <p>
-      My native language is Portuguese, and I am <strong
-        >proficient in English</strong
-      > (C1 level) and have a basic knowledge of <strong>German</strong> (A2 level).
-    </p>
-
-    <a href="/portfolio">
-      <Button>My Portfolio</Button>
-    </a>
-  </article>
+  <section id="portfolio">
+    <article class="container">
+      <h5>Portfolio</h5>
+    </article>
+  </section>
 </Base>

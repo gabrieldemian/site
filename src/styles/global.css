@@ -14,14 +14,18 @@
 
 body {
 	font-family: Poppins, Verdana, sans-serif;
-	margin: auto;
-	max-width: 65ch;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
   @apply bg-crust text-text;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+section {
+  @apply my-10;
+}
+article {
+  @apply max-w-prose mx-auto;
 }
 img {
 	max-width: 100%;
