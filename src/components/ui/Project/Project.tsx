@@ -1,7 +1,7 @@
 interface Props {
   title: string
-  desc: string
-  img: string
+  description: string
+  image: string
 }
 
 const Project = (props: Props) => {
@@ -15,11 +15,11 @@ const Project = (props: Props) => {
           class="rounded-lg hover:scale-[105%] duration-300 aspect-video object-cover"
           width="900px"
           height="900px"
-          src={props.img}
+          src={props.image}
         />
       </a>
       <h6 class="font-bold text-white">{props.title}</h6>
-      <p>{props.desc}</p>
+      <p>{props.description}</p>
     </div>
   )
 }

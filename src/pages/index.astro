@@ -1,6 +1,10 @@
 ---
+import { getCollection } from 'astro:content'
+
 import Base from '../layouts/Base.astro'
 import { Button, Project } from '~/components/ui'
+const portfolioEntries = await getCollection('portfolio')
+console.log(portfolioEntries)
 ---
 
 <Base>
@@ -56,26 +60,15 @@ import { Button, Project } from '~/components/ui'
       </p>
 
       <div class="grid lg:grid-cols-1 gap-5">
-        <Project
-          title="The Vault"
-          desc="The Vault/Inhabitants website. Interactive hub with web3 integration and NFT drops."
-          img="/images/vault.png"
-        />
-        <Project
-          title="DOTs"
-          desc="DOTs Interactive NFT with Solidjs and GraphQL."
-          img="/images/dot.jpg"
-        />
-        <Project
-          title="Dashboard"
-          desc="Interactive dashboard, with charts and tables, dark-themed."
-          img="/images/dashboard.webp"
-        />
-        <Project
-          title="P2P Chat"
-          desc="End-to-end encrypted chat, written in Rust. That also supports file transport."
-          img="/images/p2p.png"
-        />
+        {
+          portfolioEntries.map((entrie) => (
+            <Project
+              title={entrie.data.title}
+              description={entrie.data.description}
+              image={entrie.data.image}
+            />
+          ))
+        }
       </div>
     </article>
   </section>
