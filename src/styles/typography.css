@@ -73,8 +73,16 @@
     @apply mx-auto max-w-[60ch] p-2 md:p-0;
   }
 
-  article > h1, h2, h3, h4, h5, h6 {
+  article :is(h1, h2, h3, h4, h5, h6) {
+    @apply mb-5 text-slate-300;
+  }
+
+  article ul {
     @apply mb-5;
+  }
+
+  article ul li {
+    @apply list-disc list-inside;
   }
 
   article p {
