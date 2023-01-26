@@ -58,7 +58,7 @@
 
   a {
     font-family: var(--step-0);
-    @apply text-flamingo relative;
+    @apply text-peach relative;
   }
 
   a.link-hover:after {

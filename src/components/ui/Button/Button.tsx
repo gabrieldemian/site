@@ -19,15 +19,15 @@ const Button = ({
 }: Props) => {
   const options = {
     variants: {
-      primary: 'bg-maroon text-mantle',
+      primary: 'bg-peach text-crust',
       secondary: 'bg-crust text-white',
-      outlined: 'bg-crust border border-maroon text-maroon',
-      link: 'text-maroon',
+      outlined: 'bg-base border border-peach/50 text-flamingo',
+      link: 'text-peach',
     },
   } as const
 
   const classes = clsx(
-    'px-4 py-2 rounded-md font-bold hover:opacity-70 duration-300',
+    'px-4 py-2 rounded-md hover:opacity-70 duration-300',
     options.variants[variant ?? 'primary'],
     fluid && 'w-full',
     className,

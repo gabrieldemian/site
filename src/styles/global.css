@@ -25,6 +25,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   @apply bg-crust text-text;
 }
+button {
+  @apply font-thin;
+}
 section {
   @apply my-10;
 }

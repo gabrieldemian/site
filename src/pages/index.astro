@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content'
 
+import { Twitter } from '../components/ui/icons'
 import Base from '../layouts/Base.astro'
 import { Button, Project } from '~/components/ui'
-import { Twitter } from '../components/ui/icons'
 const portfolioEntries = await getCollection('portfolio')
 ---
 
@@ -53,7 +53,7 @@ const portfolioEntries = await getCollection('portfolio')
         Besides working with tech, I have a passion for languages. I'm fluent in
         English, and I'm currently learning German (A2 Level).
       </p>
-      <a href="/gabriel-cv.pdf" download>
+      <a class="mr-1" href="/gabriel-cv.pdf" download>
         <Button variant="outlined">Resume.pdf</Button>
       </a>
       <a href="/recommendation-letter.pdf" download>
@@ -94,7 +94,13 @@ const portfolioEntries = await getCollection('portfolio')
           >Linkedin</a
         >
         <a href="https://github.com/gabrieldemian" target="_blank">Github</a>
-        <a href="https://twitter.com/gabdem13" target="_blank">Twitter</a>
+        <Button
+          variant="link"
+          href="https://twitter.com/gabdem13"
+          icon={Twitter}
+        >
+          Twitter
+        </Button>
         <a href="mailto:gabrielgcr45@gmail.com" target="_blank">Email</a>
       </div>
     </article>
