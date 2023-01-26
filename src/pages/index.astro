@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 
-import { Twitter } from '../components/ui/icons'
+import { Twitter, Envelope, Linkedin, Github } from '../components/ui/icons'
 import Base from '../layouts/Base.astro'
 import { Button, Project } from '~/components/ui'
 const portfolioEntries = await getCollection('portfolio')
@@ -89,11 +89,21 @@ const portfolioEntries = await getCollection('portfolio')
       <h5>Contact</h5>
       <p>You can contact me through:</p>
 
-      <div class="flex flex-col gap-3">
-        <a href="https://linkedin.com/in/gabriel-costa-dev/" target="_blank"
-          >Linkedin</a
+      <div class="flex flex-col">
+        <Button
+          variant="link"
+          icon={Linkedin}
+          href="https://linkedin.com/in/gabriel-costa-dev/"
         >
-        <a href="https://github.com/gabrieldemian" target="_blank">Github</a>
+          Linkedin
+        </Button>
+        <Button
+          icon={Github}
+          variant="link"
+          href="https://github.com/gabrieldemian"
+        >
+          Github
+        </Button>
         <Button
           variant="link"
           href="https://twitter.com/gabdem13"
@@ -101,7 +111,13 @@ const portfolioEntries = await getCollection('portfolio')
         >
           Twitter
         </Button>
-        <a href="mailto:gabrielgcr45@gmail.com" target="_blank">Email</a>
+        <Button
+          variant="link"
+          icon={Envelope}
+          href="mailto:gabrielgcr45@gmail.com"
+        >
+          Email
+        </Button>
       </div>
     </article>
   </section>

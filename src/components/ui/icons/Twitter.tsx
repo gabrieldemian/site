@@ -5,8 +5,8 @@ interface Props {
 }
 
 const Twitter = ({
-  width = '20px',
-  height = '20px',
+  width = '1.2rem',
+  height = '1.2rem',
   class: className = '',
 }: Props) => {
   return (
