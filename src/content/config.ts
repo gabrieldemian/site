@@ -5,6 +5,8 @@ const portfolioCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     image: z.string(),
+    link: z.string(),
+    sortOrder: z.number(),
   }),
 })
 

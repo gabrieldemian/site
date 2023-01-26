@@ -20,7 +20,9 @@ const { Content } = await entry.render()
   <article>
     <h1 class="text-center">{entry.data.title}</h1>
     <p class="text-center">{entry.data.description}</p>
-    <img class="mb-10 rounded-lg" src={entry.data.image} />
+    <a target="_blank" href={entry.data.link}>
+      <img class="mb-10 rounded-lg" src={entry.data.image} />
+    </a>
     <Content />
   </article>
 </Base>

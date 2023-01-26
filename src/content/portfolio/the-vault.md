@@ -2,7 +2,8 @@
 title: The Vault
 description: The Vault/Inhabitants website. Interactive hub with web3 integration, games, and NFT drops.
 image: "/images/vault.png"
-
+link: "https://enterthevault.app/"
+sortOrder: 1
 ---
 
 ## Requirements

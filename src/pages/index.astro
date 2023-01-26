@@ -4,7 +4,9 @@ import { getCollection } from 'astro:content'
 import { Envelope, Github, Linkedin, Twitter } from '../components/ui/icons'
 import Base from '../layouts/Base.astro'
 import { Button, Project } from '~/components/ui'
-const portfolioEntries = await getCollection('portfolio')
+const portfolioEntries = await getCollection('portfolio').then((data) =>
+  data.sort((a, b) => a.data.sortOrder - b.data.sortOrder),
+)
 ---
 
 <Base>
