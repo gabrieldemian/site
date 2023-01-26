@@ -17,16 +17,17 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           Hello! I'm a <strong class="text-white">fullstack engineer</strong> 🚀
           with a focus on frontend. Working with Typescript, React, Solid, and Rust.
         </h4>
-        <div class="flex justify-between mt-10">
-          <div class="flex gap-2">
-            <a href="#about">
-              <Button>About me</Button>
+        <div class="flex flex-col sm:flex-row justify-between mt-10">
+          <div class="flex flex-col sm:flex-row gap-2">
+            <a href="#about" class="shrink-0">
+              <Button fluid>About me</Button>
             </a>
             <a href="#portfolio">
-              <Button>Portfolio</Button>
+              <Button fluid>Portfolio</Button>
             </a>
           </div>
           <Button
+            fluid
             variant="link"
             href="https://twitter.com/gabdem13"
             icon={Twitter}
@@ -55,12 +56,14 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
         Besides working with tech, I have a passion for languages. I'm fluent in
         English, and I'm currently learning German (A2 Level).
       </p>
-      <a class="mr-1" href="/gabriel-cv.pdf" download>
-        <Button variant="outlined">Resume.pdf</Button>
-      </a>
-      <a href="/recommendation-letter.pdf" download>
-        <Button variant="outlined">Recommendation Letter.pdf</Button>
-      </a>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="/gabriel-cv.pdf" download>
+          <Button fluid variant="outlined">Resume.pdf</Button>
+        </a>
+        <a href="/recommendation-letter.pdf" download>
+          <Button fluid variant="outlined">Recommendation Letter.pdf</Button>
+        </a>
+      </div>
     </article>
   </section>
 
@@ -91,8 +94,9 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
       <h5>Contact</h5>
       <p>You can contact me through:</p>
 
-      <div class="flex flex-col">
+      <div class="flex flex-wrap">
         <Button
+          class="justify-start"
           variant="link"
           icon={Linkedin}
           href="https://linkedin.com/in/gabriel-costa-dev/"

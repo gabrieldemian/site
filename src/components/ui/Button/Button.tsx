@@ -27,6 +27,7 @@ const Button = ({
   } as const
 
   const classes = clsx(
+    'flex justify-center',
     'px-4 py-2 rounded-md hover:opacity-70 duration-300',
     options.variants[variant ?? 'primary'],
     fluid && 'w-full',
