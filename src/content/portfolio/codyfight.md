@@ -1,7 +1,7 @@
 ---
 title: Codyfight
 description: Animation-heavy dapp for a blockchain game in Ethereum.
-image: "/images/codyfight.png"
+image: "/images/codyfight.webp"
 link: "https://codyfight.com"
 sortOrder: 1
 ---

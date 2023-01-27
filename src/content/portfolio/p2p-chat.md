@@ -1,7 +1,7 @@
 ---
 title: P2P Chat
 description: End-to-end encrypted chat, written in Rust. That also supports file transport.
-image: "/images/p2p.png"
+image: "/images/p2p.webp"
 link: "https://github.com/gabrieldemian/p2p-chat"
 sortOrder: 4
 ---
