@@ -63,6 +63,13 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"portfolio": {
+"codyfight.md": {
+  id: "codyfight.md",
+  slug: "codyfight",
+  body: string,
+  collection: "portfolio",
+  data: InferEntrySchema<"portfolio">
+},
 "dashboard.md": {
   id: "dashboard.md",
   slug: "dashboard",
