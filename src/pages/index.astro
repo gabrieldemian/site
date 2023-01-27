@@ -19,20 +19,15 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
         </h4>
         <div class="flex flex-col sm:flex-row justify-between mt-10">
           <div class="flex flex-col sm:flex-row gap-2">
-            <a href="#about" class="shrink-0">
-              <Button fluid>About me</Button>
-            </a>
-            <a href="#portfolio">
-              <Button fluid>Portfolio</Button>
-            </a>
+            <Button link href="#about" class="shrink-0">About me</Button>
+            <Button href="#portfolio" link fluid>Portfolio</Button>
           </div>
           <Button
-            fluid
-            variant="link"
+            variant="text"
             href="https://twitter.com/gabdem13"
             icon={Twitter}
           >
-            Twitter
+            @gabdem13
           </Button>
         </div>
       </div>
@@ -57,12 +52,22 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
         English, and I'm currently learning German (A2 Level).
       </p>
       <div class="flex flex-col sm:flex-row gap-3">
-        <a href="/gabriel-cv.pdf" download>
-          <Button fluid variant="outlined">Resume.pdf</Button>
-        </a>
-        <a href="/recommendation-letter.pdf" download>
-          <Button fluid variant="outlined">Recommendation Letter.pdf</Button>
-        </a>
+        <Button
+          href="/gabriel-cv.pdf"
+          link
+          variant="outlined"
+          download="gabriel-cv.pdf"
+        >
+          Resume.pdf
+        </Button>
+        <Button
+          href="/recommendation-letter.pdf"
+          download="recommendation-letter.pdf"
+          link
+          variant="outlined"
+        >
+          Recommendation Letter.pdf
+        </Button>
       </div>
     </article>
   </section>
@@ -97,28 +102,32 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
       <div class="flex flex-wrap">
         <Button
           class="justify-start"
-          variant="link"
+          variant="text"
           icon={Linkedin}
+          link
           href="https://linkedin.com/in/gabriel-costa-dev/"
         >
           Linkedin
         </Button>
         <Button
           icon={Github}
-          variant="link"
+          variant="text"
+          link
           href="https://github.com/gabrieldemian"
         >
           Github
         </Button>
         <Button
-          variant="link"
+          variant="text"
+          link
           href="https://twitter.com/gabdem13"
           icon={Twitter}
         >
           Twitter
         </Button>
         <Button
-          variant="link"
+          variant="text"
+          link
           icon={Envelope}
           href="mailto:gabrielgcr45@gmail.com"
         >

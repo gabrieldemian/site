@@ -18,7 +18,7 @@ const Project = (props: Props) => {
           src={props.image}
         />
       </a>
-      <h6 class="font-bold text-white">{props.title}</h6>
+      <h6 class="font-bold text-white mt-3">{props.title}</h6>
       <p>{props.description}</p>
     </div>
   )

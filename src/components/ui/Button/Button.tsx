@@ -3,9 +3,10 @@ import { Dynamic } from 'solid-js/web'
 
 interface Props {
   children: string
-  variant?: 'primary' | 'secondary' | 'outlined' | 'link'
+  variant?: 'primary' | 'secondary' | 'outlined' | 'text'
   fluid?: boolean
-  className?: string
+  link?: boolean
+  class?: string
   icon?: Element
 }
 
@@ -13,8 +14,9 @@ const Button = ({
   children,
   variant,
   fluid,
-  className,
+  class: className,
   icon,
+  link,
   ...rest
 }: Props) => {
   const options = {
@@ -22,7 +24,7 @@ const Button = ({
       primary: 'bg-peach text-crust',
       secondary: 'bg-crust text-white',
       outlined: 'bg-base border border-peach/50 text-flamingo',
-      link: 'text-peach',
+      text: 'text-peach',
     },
   } as const
 
@@ -35,12 +37,8 @@ const Button = ({
   )
 
   return (
-    <Dynamic
-      component={variant === 'link' ? 'a' : 'button'}
-      class={classes}
-      {...rest}
-    >
-      {icon && <Dynamic class="mr-1" component={icon as any} />}
+    <Dynamic component={link ? 'a' : 'button'} class={classes} {...rest}>
+      {icon && <Dynamic class="my-auto mr-1" component={icon as any} />}
       {children}
     </Dynamic>
   )

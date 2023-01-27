@@ -12,7 +12,7 @@
     --step-5: clamp(2.80rem, calc(2.31rem + 2.46vw), 5.26rem);
   }
 
-  p {
+  p, button {
     font-size: var(--step-0);
     line-height: 1.5em;
     @apply text-text font-poppins;
@@ -71,7 +71,7 @@
   }
 
   article.container {
-    @apply mx-auto max-w-[60ch] p-2 md:p-0;
+    @apply mx-auto max-w-[60ch];
   }
 
   article :is(h1, h2, h3, h4, h5, h6) {
