@@ -23,7 +23,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-crust text-text;
+  @apply bg-base text-subtext1 font-poppins;
 }
 button {
   @apply font-thin;
@@ -69,4 +69,12 @@ blockquote {
 }
 .bg-inactive {
   @apply bg-overlay0;
+}
+
+pre.astro-code {
+  @apply rounded-lg mb-5;
+}
+
+code {
+  @apply rounded-lg px-2 py-1 border border-red/25 text-yellow font-thin text-sm;
 }

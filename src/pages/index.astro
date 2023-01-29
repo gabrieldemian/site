@@ -22,6 +22,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           <Button href="#portfolio" link fluid>Portfolio</Button>
         </div>
         <Button
+          class="!p-0 !text-yellow"
           link
           variant="text"
           href="https://twitter.com/gabdem13"
@@ -33,7 +34,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
     </header>
   </section>
 
-  <section class="bg-base rounded-md py-10" id="about">
+  <section class="bg-crust rounded-md py-10" id="about">
     <div class="article">
       <h2>About me</h2>
       <p>
@@ -98,9 +99,9 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
       <h2>Contact</h2>
       <p>You can contact me through:</p>
 
-      <div class="flex flex-wrap">
+      <div class="flex flex-wrap gap-10">
         <Button
-          class="justify-start"
+          class="justify-start !p-0 !text-yellow"
           variant="text"
           icon={Linkedin}
           link
@@ -109,6 +110,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           Linkedin
         </Button>
         <Button
+          class="!p-0 !text-yellow"
           icon={Github}
           variant="text"
           link
@@ -117,6 +119,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           Github
         </Button>
         <Button
+          class="!p-0 !text-yellow"
           variant="text"
           link
           href="https://twitter.com/gabdem13"
@@ -125,6 +128,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           Twitter
         </Button>
         <Button
+          class="!p-0 !text-yellow"
           variant="text"
           link
           icon={Envelope}

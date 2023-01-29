@@ -1,0 +1,29 @@
+---
+import { GoBack } from '~/components/ui'
+import Base from '~/layouts/Base.astro'
+
+const posts = await Astro.glob('./*.mdx')
+---
+
+<Base>
+  <article>
+    <div class="h-20"></div>
+
+    <GoBack />
+
+    <h1>Blog</h1>
+    <p>Posts:</p>
+    <ul>
+      {
+        posts.map((post) => (
+          <li class="flex justify-between">
+            <a href={post.url}>{post.frontmatter.title}</a>
+            <time>
+              <i>{post.frontmatter.pubDate}</i>
+            </time>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+</Base>
