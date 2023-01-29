@@ -24,12 +24,8 @@
   }
 
   h1, h2, h3, h4, h5, h6, label {
-    @apply text-subtext1 font-bold;
+    @apply font-corben font-semibold text-subtext1;
     line-height: 1.5em;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-corben font-semibold;
   }
 
   h1 {
@@ -70,12 +66,12 @@
     @apply w-full;
   }
 
-  article, .article {
+  article, .article, .container {
     @apply mx-auto max-w-prose;
   }
 
   article :is(h1, h2, h3, h4, h5, h6), .article :is(h1, h2, h3, h4, h5, h6) {
-    @apply mb-5 text-slate-300;
+    @apply mb-5 text-slate-200;
   }
 
   article ul, .article ul {
@@ -97,6 +93,6 @@
   }
 
   *::selection {
-    @apply bg-surface2;
+    @apply bg-red;
   }
 }
