@@ -11,11 +11,11 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
 
 <Base>
   <section>
-    <article class="container my-20">
-      <h4>
+    <header class="container max-w-prose my-20">
+      <h1>
         Hello! I'm a <strong class="text-white">fullstack engineer</strong> 🚀 with
         a focus on frontend. Working with Typescript, React, Solid, and Rust.
-      </h4>
+      </h1>
       <div class="flex flex-col sm:flex-row justify-between mt-10">
         <div class="flex flex-col sm:flex-row gap-2">
           <Button link href="#about" class="shrink-0">About me</Button>
@@ -30,12 +30,12 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           @gabdem13
         </Button>
       </div>
-    </article>
+    </header>
   </section>
 
   <section class="bg-base rounded-md py-10" id="about">
-    <article class="container">
-      <h5 class="text-white">About me</h5>
+    <div class="article">
+      <h2>About me</h2>
       <p>
         I started to program when I was 15 years old, and I never stopped since
         that day. When I was 18 I began my Technologist Degree in System
@@ -68,12 +68,12 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           Recommendation Letter.pdf
         </Button>
       </div>
-    </article>
+    </div>
   </section>
 
   <section id="portfolio">
-    <article class="container">
-      <h5 class="text-white">Portfolio</h5>
+    <div class="article">
+      <h2>Portfolio</h2>
       <p>
         Only my best work is listed here. Click on a project to read more about
         it.
@@ -90,12 +90,12 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           ))
         }
       </div>
-    </article>
+    </div>
   </section>
 
   <section id="contact">
-    <article class="container">
-      <h5>Contact</h5>
+    <div class="article">
+      <h2>Contact</h2>
       <p>You can contact me through:</p>
 
       <div class="flex flex-wrap">
@@ -133,6 +133,6 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           Email
         </Button>
       </div>
-    </article>
+    </div>
   </section>
 </Base>

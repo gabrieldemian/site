@@ -16,8 +16,8 @@ const { entry } = Astro.props
 const { Content } = await entry.render()
 ---
 
-<Base>
-  <article class="container">
+<Base title={entry.data.title} description={entry.data.description}>
+  <article>
     <h1 class="text-center">{entry.data.title}</h1>
     <p class="text-center">{entry.data.description}</p>
     <a target="_blank" href={entry.data.link}>
