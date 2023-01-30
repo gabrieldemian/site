@@ -20,7 +20,7 @@
   a {
     font-size: var(--step-0);
     line-height: 1.5em;
-    @apply text-yellow relative;
+    @apply !text-yellow relative;
   }
 
   h1, h2, h3, h4, h5, h6, label {
@@ -29,27 +29,27 @@
   }
 
   h1 {
-    font-size: var(--step-5);
+    font-size: var(--step-5) !important;
   }
 
   h2 {
-    font-size: var(--step-4);
+    font-size: var(--step-4) !important;
   }
 
   h3 {
-    font-size: var(--step-3);
+    font-size: var(--step-3) !important;
   }
 
   h4 {
-    font-size: var(--step-2);
+    font-size: var(--step-2) !important;
   }
 
   h5 {
-    font-size: var(--step-1);
+    font-size: var(--step-1) !important;
   }
 
   h6 {
-    font-size: var(--step-0);
+    font-size: var(--step-0) !important;
   }
 
   /*
