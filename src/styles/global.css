@@ -79,18 +79,27 @@ code {
   @apply rounded-lg px-2 py-1 border border-red/25 text-yellow font-thin text-sm;
 }
 
-.glow {
-  @apply duration-300 ease-linear transition-all;
+.glow, .glow-text {
+  @apply relative;
 }
 
-.glow:hover {
-  @apply text-yellow shadow-[0px_0px_0px_1px_rgba(var(--ctp-yellow)),0_2px_20px_-2px_rgba(var(--ctp-yellow))] delay-150;
+.glow::after {
+  content: "";
+  @apply text-yellow delay-150 inset-0 absolute w-full h-full rounded-lg opacity-0 duration-300 ease-linear transition-all;
+}
+
+.glow::after {
+  @apply shadow-[0px_0px_0px_1px_rgba(var(--ctp-yellow)),0_2px_20px_-2px_rgba(var(--ctp-yellow))] delay-150;
 }
 
 .glow-text {
-  @apply duration-300 ease-linear transition-all;
+  @apply duration-300 ease-linear delay-150;
 }
 
 .glow-text:hover {
-  @apply text-yellow drop-shadow-[0_0px_7px_rgba(var(--ctp-yellow))] delay-150;
+  @apply text-yellow drop-shadow-[0px_0px_7px_rgba(var(--ctp-yellow))];
+}
+
+.glow:hover::after {
+  @apply opacity-100;
 }

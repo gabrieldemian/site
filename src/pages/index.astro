@@ -11,12 +11,12 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
 
 <Base>
   <section>
-    <header class="container max-w-prose my-20">
+    <header class="container max-w-prose sm:my-20">
       <h1>
         Hello! I'm a <strong class="text-white">fullstack engineer</strong> 🚀 with
         a focus on frontend. Working with Typescript, React, Solid, and Rust.
       </h1>
-      <div class="flex flex-col sm:flex-row justify-between mt-10">
+      <div class="flex flex-col sm:flex-row justify-between mt-10 gap-2">
         <div class="flex flex-col sm:flex-row gap-2">
           <Button link href="#about" class="shrink-0">About me</Button>
           <Button href="#portfolio" link fluid>Portfolio</Button>
