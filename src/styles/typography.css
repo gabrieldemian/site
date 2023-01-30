@@ -52,16 +52,16 @@
     font-size: var(--step-0);
   }
 
-  /* article a[href^="https://"]:after { */
-  /*   content: ""; */
-  /*   @apply duration-300 bottom-0 left-0 w-0 h-[1px] absolute bg-gradient-to-r from-red to-mauve; */
-  /* } */
-  /* article a[href^="https://"]:hover:after { */
-  /*   @apply w-full; */
-  /* } */
+  article a[href^="https://"]:after {
+    content: "";
+    @apply duration-300 bottom-0 left-0 w-0 h-[1px] absolute bg-gradient-to-r from-red to-mauve;
+  }
+  article a[href^="https://"]:hover:after {
+    @apply w-full;
+  }
 
-  article, .article, .container {
-    @apply mx-auto max-w-prose;
+  article, .article {
+    @apply mx-auto max-w-prose container;
   }
 
   article :is(h1, h2, h3, h4, h5, h6), .article :is(h1, h2, h3, h4, h5, h6) {
