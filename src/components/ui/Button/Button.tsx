@@ -30,7 +30,7 @@ const Button = ({
       primary: 'bg-peach text-crust glow',
       secondary: 'bg-crust text-white',
       outlined:
-        'bg-base border border-peach/50 text-flamingo glow hover:text-yellow',
+        'glow bg-base border border-peach/50 !text-flamingo hover:text-yellow',
       text: 'text-text glow-text',
     },
     sizes: {
