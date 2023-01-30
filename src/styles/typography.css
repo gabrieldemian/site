@@ -52,11 +52,15 @@
     font-size: var(--step-0);
   }
 
-  article a[href^="https://"]:after {
+  /*
+  *   Only style <a> that beggings with `https://`
+  *   that is not followed by an <img>
+  **/
+  article a:not(:has(> img))[href^="https://"]:after {
     content: "";
     @apply duration-300 bottom-0 left-0 w-0 h-[1px] absolute bg-gradient-to-r from-red to-mauve;
   }
-  article a[href^="https://"]:hover:after {
+  article a:not(:has(> img))[href^="https://"]:hover:after {
     @apply w-full;
   }
 

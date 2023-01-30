@@ -6,8 +6,8 @@ module.exports = {
       center: true,
       padding: {
         DEFAULT: '1rem',
-        sm: '0'
-      }
+        sm: '0',
+      },
     },
     extend: {
       fontFamily: {
