@@ -35,7 +35,7 @@ article {
   @apply max-w-prose mx-auto;
 }
 img {
-	max-width: 100%;
+	width: 100%;
 	height: auto;
 }
 code {
@@ -85,11 +85,7 @@ code {
 
 .glow::after {
   content: "";
-  @apply text-yellow delay-150 inset-0 absolute w-full h-full rounded-lg opacity-0 duration-300 ease-linear transition-all;
-}
-
-.glow::after {
-  @apply shadow-[0px_0px_0px_1px_rgba(var(--ctp-yellow)),0_2px_20px_-2px_rgba(var(--ctp-yellow))] delay-150;
+  @apply shadow-[0px_0px_0px_1px_rgba(var(--ctp-yellow)),0_2px_20px_-2px_rgba(var(--ctp-yellow))] delay-150 text-yellow delay-150 inset-0 absolute w-full h-full rounded-lg opacity-0 duration-300 ease-linear transition-all;
 }
 
 .glow-text {
