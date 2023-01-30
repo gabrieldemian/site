@@ -78,3 +78,19 @@ pre.astro-code {
 code {
   @apply rounded-lg px-2 py-1 border border-red/25 text-yellow font-thin text-sm;
 }
+
+.glow {
+  @apply duration-300 ease-linear transition-all;
+}
+
+.glow:hover {
+  @apply text-yellow shadow-[0px_0px_0px_1px_rgba(var(--ctp-yellow)),0_2px_20px_-2px_rgba(var(--ctp-yellow))] delay-150;
+}
+
+.glow-text {
+  @apply duration-300 ease-linear transition-all;
+}
+
+.glow-text:hover {
+  @apply text-yellow drop-shadow-[0_0px_7px_rgba(var(--ctp-yellow))] delay-150;
+}

@@ -21,7 +21,7 @@ const { Content } = await entry.render()
     <h1 class="text-center">{entry.data.title}</h1>
     <p class="text-center">{entry.data.description}</p>
     <a target="_blank" href={entry.data.link}>
-      <img class="mb-10 rounded-lg" src={entry.data.image} />
+      <img class="mb-10 rounded-lg mx-auto glow" src={entry.data.image} />
     </a>
     <Content />
   </article>

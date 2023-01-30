@@ -13,7 +13,7 @@ const Project = (props: Props) => {
         href={`/portfolio/${props.title.toLowerCase().replace(' ', '-')}`}
       >
         <img
-          class="rounded-lg hover:scale-[105%] duration-300 aspect-video object-cover"
+          class="rounded-lg aspect-video object-cover glow"
           width="900px"
           height="900px"
           alt={'image of '.concat(props.title)}

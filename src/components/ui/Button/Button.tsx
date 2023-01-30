@@ -19,7 +19,7 @@ const Button = ({
   fluid,
   class: className,
   icon,
-  link,
+  link = false,
   size = 'md',
   hasPadding = true,
   iconClass = '',
@@ -27,10 +27,10 @@ const Button = ({
 }: Props) => {
   const options = {
     variants: {
-      primary: 'bg-peach text-crust',
+      primary: 'bg-peach text-crust glow',
       secondary: 'bg-crust text-white',
-      outlined: 'bg-base border border-peach/50 text-flamingo',
-      text: 'text-text hover:text-yellow hover:!opacity-100',
+      outlined: 'bg-base border border-peach/50 text-flamingo glow',
+      text: 'text-text hover:text-yellow glow-text',
     },
     sizes: {
       sm: 'px-2 py-1 text-sm',
@@ -40,7 +40,7 @@ const Button = ({
 
   const classes = clsx(
     'inline-flex justify-center items-center group duration-300',
-    'rounded-md hover:opacity-70',
+    'rounded-md',
     hasPadding && options.sizes[size],
     options.variants[variant ?? 'primary'],
     fluid && 'w-full',

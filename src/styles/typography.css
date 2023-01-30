@@ -52,14 +52,13 @@
     font-size: var(--step-0);
   }
 
-  article a[href^="https://"]:after {
-    content: "";
-    @apply duration-300 bottom-0 left-0 w-0 h-[1px] absolute bg-gradient-to-r from-red to-mauve;
-  }
-
-  article a[href^="https://"]:hover:after {
-    @apply w-full;
-  }
+  /* article a[href^="https://"]:after { */
+  /*   content: ""; */
+  /*   @apply duration-300 bottom-0 left-0 w-0 h-[1px] absolute bg-gradient-to-r from-red to-mauve; */
+  /* } */
+  /* article a[href^="https://"]:hover:after { */
+  /*   @apply w-full; */
+  /* } */
 
   article, .article, .container {
     @apply mx-auto max-w-prose;
@@ -74,7 +73,7 @@
   }
 
   article ul li, .article ul li {
-    @apply list-disc list-inside;
+    @apply list-disc list-inside ml-5;
   }
 
   article p, .article p {
@@ -83,11 +82,15 @@
 
   small, .small {
     line-height: 1.5em;
-    @apply text-text font-poppins;
     font-size: var(--step--1);
+    @apply text-text font-poppins;
   }
 
-  *::selection {
-    @apply bg-red;
+  :not(pre, code, code span)::selection {
+    @apply bg-red text-white;
+  }
+
+  code span::selection, code::selection {
+    @apply bg-slate-200/50;
   }
 }
