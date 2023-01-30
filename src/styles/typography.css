@@ -2,14 +2,14 @@
 
 @layer base {
   :root {
- --step--2: clamp(0.89rem, calc(0.87rem + 0.10vw), 0.99rem);
-  --step--1: clamp(1.00rem, calc(0.98rem + 0.11vw), 1.11rem);
-  --step-0: clamp(1.13rem, calc(1.10rem + 0.13vw), 1.25rem);
-  --step-1: clamp(1.27rem, calc(1.24rem + 0.14vw), 1.41rem);
-  --step-2: clamp(1.42rem, calc(1.39rem + 0.16vw), 1.58rem);
-  --step-3: clamp(1.60rem, calc(1.57rem + 0.18vw), 1.78rem);
-  --step-4: clamp(1.80rem, calc(1.76rem + 0.20vw), 2.00rem);
-  --step-5: clamp(2.03rem, calc(1.98rem + 0.23vw), 2.25rem);
+    --step--2: clamp(0.89rem, calc(0.87rem + 0.10vw), 0.99rem);
+    --step--1: clamp(1.00rem, calc(0.98rem + 0.11vw), 1.11rem);
+    --step-0: clamp(1.13rem, calc(1.10rem + 0.13vw), 1.25rem);
+    --step-1: clamp(1.27rem, calc(1.24rem + 0.14vw), 1.41rem);
+    --step-2: clamp(1.42rem, calc(1.39rem + 0.16vw), 1.58rem);
+    --step-3: clamp(1.60rem, calc(1.57rem + 0.18vw), 1.78rem);
+    --step-4: clamp(1.80rem, calc(1.76rem + 0.20vw), 2.00rem);
+    --step-5: clamp(2.03rem, calc(1.98rem + 0.23vw), 2.25rem);
   }
 
   p, button {
@@ -24,7 +24,7 @@
   }
 
   h1, h2, h3, h4, h5, h6, label {
-    @apply font-corben font-semibold text-subtext1;
+    @apply !font-corben !font-semibold text-subtext1;
     line-height: 1.5em;
   }
 
