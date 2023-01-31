@@ -10,6 +10,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
 ---
 
 <Base>
+  <section class="container max-w-[90ch]"></section>
   <section>
     <header class="container max-w-prose sm:my-20">
       <h1>
@@ -79,18 +80,25 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
         Only my best work is listed here. Click on a project to read more about
         it.
       </p>
+    </div>
 
-      <div class="grid lg:grid-cols-1 gap-5 mt-10">
-        {
-          portfolioEntries.map((entrie) => (
-            <Project
-              title={entrie.data.title}
-              description={entrie.data.description}
-              image={entrie.data.image}
-            />
-          ))
-        }
-      </div>
+    <div
+      class="grid gap-5 sm:grid-cols-2 sm:grid-rows-2 container max-w-[100ch] mt-10"
+    >
+      {
+        portfolioEntries.map((entrie) => (
+          <Project
+            class={
+              entrie.data.title === 'Dots'
+                ? 'row-span-2 [&_img]:h-full [&_img]:!object-cover'
+                : ''
+            }
+            title={entrie.data.title}
+            description={entrie.data.description}
+            image={entrie.data.image}
+          />
+        ))
+      }
     </div>
   </section>
 
