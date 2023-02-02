@@ -6,9 +6,18 @@ pubDate: '29/01/2023'
 tags: ['react', 'motion-one']
 ---
 
-import { Button, CodeBlock } from '~/components/ui'
+import { Button, CallOut } from '~/components/ui'
 
-testando um codigo
+testando um codigo e agora **isto e um strong** bla bla
+e agora um *italico*
+
+<CallOut>
+ Isto eh um call out com info
+</CallOut>
+
+<CallOut type="danger">
+ Isto eh um call out com danger!! CUIDADO
+</CallOut>
 
 ```tsx
 const algo = 'isso aqui'
@@ -19,8 +28,6 @@ const fn = () => {
 
 fn()
 ```
-
-<CodeBlock code={<div />} />
 
 <Button>ola</Button>
 

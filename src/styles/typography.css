@@ -12,6 +12,14 @@
     --step-5: clamp(2.03rem, calc(1.98rem + 0.23vw), 2.25rem);
   }
 
+  strong {
+    @apply text-text font-semibold;
+  }
+
+  em {
+    @apply text-subtext1;
+  }
+
   p, button {
     font-size: var(--step-0);
     line-height: 1.5em;
@@ -21,6 +29,12 @@
     font-size: var(--step-0);
     line-height: 1.5em;
     @apply text-yellow relative;
+  }
+
+  small, .small {
+    line-height: 1.5em;
+    font-size: var(--step--1);
+    @apply text-text font-poppins;
   }
 
   h1, h2, h3, h4, h5, h6, label {
@@ -82,12 +96,6 @@
 
   article p, .article p {
     @apply mb-5;
-  }
-
-  small, .small {
-    line-height: 1.5em;
-    font-size: var(--step--1);
-    @apply text-text font-poppins;
   }
 
   :not(pre, code, code span)::selection {
