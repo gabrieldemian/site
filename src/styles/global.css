@@ -99,3 +99,27 @@ code {
 .glow:hover::after {
   @apply opacity-100;
 }
+
+pre {
+  white-space: unset;
+  @apply p-0;
+}
+
+pre code {
+  @apply py-3;
+}
+
+pre code, pre code .line {
+  @apply w-full inline-block;
+}
+
+pre code .line {
+  counter-increment: listing;
+  @apply hover:bg-base/75 whitespace-nowrap;
+}
+
+pre code .line::before {
+  content: counter(listing);
+  display: inline-block;
+  @apply w-10 ml-3 mt-1;
+}
