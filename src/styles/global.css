@@ -23,7 +23,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-base text-subtext1 font-poppins;
+  @apply bg-crust text-subtext1 font-poppins;
 }
 button {
   @apply font-thin;
@@ -71,10 +71,6 @@ blockquote {
   @apply bg-overlay0;
 }
 
-pre.astro-code {
-  @apply rounded-lg mb-5;
-}
-
 code {
   @apply rounded-lg px-2 py-1 border border-red/25 text-yellow font-thin text-sm;
 }
@@ -100,25 +96,25 @@ code {
   @apply opacity-100;
 }
 
-pre {
+pre.astro-code {
   white-space: unset;
-  @apply p-0;
+  @apply !p-0 rounded-lg mb-5 !bg-base border border-overlay1/25;
 }
 
-pre code {
-  @apply py-3;
+pre.astro-code code {
+  @apply py-2;
 }
 
-pre code, pre code .line {
+pre.astro-code code, pre.astro-code code .line {
   @apply w-full inline-block;
 }
 
-pre code .line {
+pre.astro-code code .line {
   counter-increment: listing;
-  @apply hover:bg-base/75 whitespace-nowrap;
+  @apply hover:bg-red/10 whitespace-nowrap;
 }
 
-pre code .line::before {
+pre.astro-code code .line::before {
   content: counter(listing);
   display: inline-block;
   @apply w-10 ml-3 mt-1;
