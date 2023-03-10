@@ -6,7 +6,27 @@ module.exports = {
     node: true,
   },
   parser: '@typescript-eslint/parser',
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
+  },
+  overrides: [
+    {
+      extends: [
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+      ],
+      files: ['*.ts', '*.tsx'],
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        project: 'tsconfig.json',
+      },
+    },
+  ],
   parserOptions: {
+    project: './tsconfig.json',
+    parser: '@typescript-eslint/parser',
+    tsconfigRootDir: './',
     ecmaFeatures: {
       jsx: true,
     },
@@ -18,7 +38,6 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'import', 'markdown'],
   extends: [
-    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
@@ -59,6 +78,13 @@ module.exports = {
         tabWidth: 2,
         bracketSpacing: true,
         semi: false,
+      },
+    ],
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      {
+        prefer: 'type-imports',
+        fixStyle: 'inline-type-imports',
       },
     ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',

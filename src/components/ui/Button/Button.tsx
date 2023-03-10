@@ -1,7 +1,8 @@
+import type { HTMLAttributes } from 'astro/types'
 import clsx from 'clsx'
 import { Dynamic } from 'solid-js/web'
 
-interface Props {
+interface Props extends HTMLAttributes<'a'> {
   children: string
   variant?: 'primary' | 'secondary' | 'outlined' | 'text'
   size?: 'sm' | 'md'
@@ -10,7 +11,7 @@ interface Props {
   hasPadding?: boolean
   class?: string
   iconClass?: string
-  icon?: Element
+  icon?: any
 }
 
 const Button = ({
@@ -23,6 +24,7 @@ const Button = ({
   size = 'md',
   hasPadding = true,
   iconClass = '',
+  href = '',
   ...rest
 }: Props) => {
   const options = {
@@ -49,10 +51,13 @@ const Button = ({
   )
 
   return (
-    <Dynamic component={link ? 'a' : 'button'} class={classes} {...rest}>
-      {icon && (
-        <Dynamic class={`my-auto mr-1 ${iconClass}`} component={icon as any} />
-      )}
+    <Dynamic
+      component={link ? 'a' : 'button'}
+      class={classes}
+      href={href}
+      {...rest}
+    >
+      {icon && <Dynamic class={`my-auto mr-1 ${iconClass}`} component={icon} />}
       {children}
     </Dynamic>
   )

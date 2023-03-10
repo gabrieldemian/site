@@ -1,18 +1,26 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/strictest",
+    "include": [
+    ".eslintrc.cjs",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.js"
+  ],
+  "exclude": ["node_modules", "src/pages/rss.xml.js"],
   "compilerOptions": {
+    "baseUrl": ".",
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "baseUrl": ".",
     "paths": {
-      "~/*": "./src/*"
+      "~/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
+    "allowJs": true,
+    "checkJs": true,
     "skipLibCheck": true,
-    "include": [
-      "src"
-    ]
   }
 }
