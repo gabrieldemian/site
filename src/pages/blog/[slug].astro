@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content'
+
+import { GoBack } from '~/components/ui'
+
+import Base from '~/layouts/Base.astro'
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog')
+
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+---
+
+<Base title={entry.data.title} description={entry.data.description}>
+  <article>
+    <div class="h-20"></div>
+    <GoBack href="/blog" />
+    <h1>{entry.data.title}</h1>
+    <p>{entry.data.description}</p>
+    <Content />
+  </article>
+</Base>

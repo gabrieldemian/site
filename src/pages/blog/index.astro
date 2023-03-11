@@ -1,8 +1,11 @@
 ---
+import { getCollection } from 'astro:content';
 import { GoBack } from '~/components/ui'
 import Base from '~/layouts/Base.astro'
 
-const posts = await Astro.glob('./*.mdx')
+const posts = await getCollection('blog').then((data) =>
+  data.sort((a, b) => a.data.sortOrder - b.data.sortOrder),
+)
 ---
 
 <Base>
@@ -18,13 +21,13 @@ const posts = await Astro.glob('./*.mdx')
         posts.map((post) => (
           <li class="flex justify-between !ml-0">
             <div>
-              <a href={post.url} class="text-yellow text-lg">
-                {post.frontmatter.title}
+              <a href={`/blog/${post.slug}`} class="text-yellow text-lg">
+                {post.data.title}
               </a>
-              <p class="small">{post.frontmatter.description}</p>
+              <p class="small">{post.data.description}</p>
             </div>
             <time>
-              <i>{post.frontmatter.pubDate}</i>
+              <i>{post.data.pubDate.toLocaleDateString()} - {post.data.pubDate.toLocaleTimeString()}</i>
             </time>
           </li>
         ))

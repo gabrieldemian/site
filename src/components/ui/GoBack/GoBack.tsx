@@ -13,7 +13,7 @@ const GoBack = ({ children = 'Go Back', href = '/' }: Props) => {
       link
       variant="text"
       href={href}
-      icon={ArrowLeft as any}
+      icon={ArrowLeft}
       class="!px-0"
       iconClass="group-hover:-translate-x-[25%] duration-300"
     >
