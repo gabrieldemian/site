@@ -18,7 +18,7 @@ const blogCollection = defineCollection({
     author: z.string(),
     pubDate: z.date(),
     image: z.string().optional(),
-    sortOrder: z.number(),
+    featured: z.boolean().default(false),
   }),
 })
 

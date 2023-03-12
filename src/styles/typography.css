@@ -25,6 +25,10 @@
     line-height: 1.5em;
   }
 
+  time {
+    @apply text-xs text-subtext0;
+  }
+
   a {
     font-size: var(--step-0);
     line-height: 1.5em;
@@ -78,8 +82,12 @@
     @apply w-full;
   }
 
-  article, .article {
+  .prose-container {
     @apply mx-auto max-w-prose container;
+  }
+
+  article, .article {
+    @apply prose-container;
   }
 
   article :is(h1, h2, h3, h4, h5, h6), .article :is(h1, h2, h3, h4, h5, h6) {

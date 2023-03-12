@@ -1,37 +1,54 @@
 ---
-import { getCollection } from 'astro:content';
-import { GoBack } from '~/components/ui'
+import { getCollection } from 'astro:content'
+import { GoBack, Card } from '~/components/ui'
 import Base from '~/layouts/Base.astro'
 
-const posts = await getCollection('blog').then((data) =>
-  data.sort((a, b) => a.data.sortOrder - b.data.sortOrder),
-)
+const [posts, featured] = await Promise.all([
+  getCollection('blog'),
+  getCollection('blog').then((data) => data.filter((c) => c.data.featured)),
+])
 ---
 
 <Base>
-  <article>
+  <div class="prose-container">
     <div class="h-20"></div>
 
     <GoBack />
+    <h1 class="mb-5 text-slate-200">Featured</h1>
+    <ul>
+      {
+        featured.map((post) => (
+          <a href={`/blog/${post.slug}`}>
+            <Card border className="glow">
+              <p class="text-lg mb-3 font-semibold text-slate-200">
+                {post.data.title}
+              </p>
+              <p class="small text-white">{post.data.description}</p>
+            </Card>
+          </a>
+        ))
+      }
+    </ul>
 
-    <h1>Blog</h1>
-    <p>Posts:</p>
+    <h1 class="mb-5 mt-10 text-slate-200">All posts</h1>
     <ul>
       {
         posts.map((post) => (
-          <li class="flex justify-between !ml-0">
-            <div>
-              <a href={`/blog/${post.slug}`} class="text-yellow text-lg">
-                {post.data.title}
+          <li class="!ml-0 mb-3">
+            <Card className="hover:bg-crust">
+              <a
+                href={`/blog/${post.slug}`}
+                class="text-text flex justify-between"
+              >
+                <p class="text-text">{post.data.title}</p>
+                <time>
+                  <i>{post.data.pubDate.toLocaleDateString()}</i>
+                </time>
               </a>
-              <p class="small">{post.data.description}</p>
-            </div>
-            <time>
-              <i>{post.data.pubDate.toLocaleDateString()} - {post.data.pubDate.toLocaleTimeString()}</i>
-            </time>
+            </Card>
           </li>
         ))
       }
     </ul>
-  </article>
+  </div>
 </Base>
