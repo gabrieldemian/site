@@ -27,10 +27,10 @@ const Button = ({
 }: Props) => {
   const options = {
     variants: {
-      primary: 'bg-peach text-crust glow',
+      primary: 'bg-primary text-white glow',
       secondary: 'bg-crust text-white',
       outlined:
-        'glow bg-base border border-peach/50 !text-flamingo hover:text-yellow',
+        'glow bg-base border-dashed border-2 border-primary !text-primary hover:!text-white',
       text: 'text-text glow-text',
     },
     sizes: {

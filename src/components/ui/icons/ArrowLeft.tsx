@@ -20,7 +20,7 @@ const ArrowLeft = ({
       stroke="currentColor"
       width={width}
       height={height}
-      class={`inline-block duration-300 delay-150 ease-linear ${className}`}
+      class={`inline-block duration-300 ease-linear ${className}`}
     >
       <path
         stroke-linecap="round"

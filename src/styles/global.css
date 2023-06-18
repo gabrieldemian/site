@@ -72,7 +72,7 @@ blockquote {
 }
 
 code {
-  @apply rounded-lg px-2 py-1 border border-red/25 text-yellow font-thin text-sm;
+  @apply rounded-lg px-2 py-1 border border-red/25 text-primary font-thin text-sm;
 }
 
 .glow, .glow-text {
@@ -81,18 +81,22 @@ code {
 
 .glow::after {
   content: "";
-  @apply shadow-[0px_0px_0px_1px_rgba(var(--ctp-yellow)),0_2px_20px_-2px_rgba(var(--ctp-yellow))] delay-150 text-yellow delay-150 inset-0 absolute w-full h-full rounded-lg opacity-0 duration-300 ease-linear transition-all;
+  @apply shadow-[0px_0px_0px_1px_rgba(var(--primary)),0_2px_30px_-2px_rgba(var(--primary))] text-primary inset-0 absolute w-full h-full rounded-lg opacity-0 duration-300 ease-linear transition-all;
 }
 
-.glow-text {
-  @apply duration-300 ease-linear delay-150;
+.glow-text, .glow-text-secondary {
+  @apply duration-300 ease-linear;
 }
 
 .glow-text:hover {
-  @apply text-yellow drop-shadow-[0px_0px_7px_rgba(var(--ctp-yellow))];
+  @apply text-primary drop-shadow-[0px_0px_8px_rgba(var(--primary))];
 }
 
-.glow:hover::after {
+.glow-text-secondary:hover {
+  @apply drop-shadow-[0_0_8px_rgba(var(--secondary))];
+}
+
+.glow:hover::after, .glow-text-secondary {
   @apply opacity-100;
 }
 

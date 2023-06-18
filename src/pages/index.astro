@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 
-import { Envelope, Github, Linkedin, Twitter } from '../components/ui/icons'
+import { Envelope, Github, Linkedin } from '../components/ui/icons'
 import Base from '../layouts/Base.astro'
 import { Button, Project } from '~/components/ui'
 const portfolioEntries = await getCollection('portfolio').then((data) =>
@@ -22,15 +22,6 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           <Button link href="#about" class="shrink-0">About me</Button>
           <Button href="#portfolio" link fluid>Portfolio</Button>
         </div>
-        <Button
-          class="!p-0 !text-yellow"
-          link
-          variant="text"
-          href="https://twitter.com/gabdem13"
-          icon={Twitter}
-        >
-          @gabdem13
-        </Button>
       </div>
     </header>
   </section>
@@ -109,7 +100,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
 
       <div class="flex flex-wrap gap-10">
         <Button
-          class="justify-start !p-0 !text-yellow"
+          class="justify-start !p-0 !text-primary"
           variant="text"
           icon={Linkedin}
           link
@@ -118,7 +109,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           Linkedin
         </Button>
         <Button
-          class="!p-0 !text-yellow"
+          class="!p-0 !text-primary"
           icon={Github}
           variant="text"
           link
@@ -127,16 +118,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           Github
         </Button>
         <Button
-          class="!p-0 !text-yellow"
-          variant="text"
-          link
-          href="https://twitter.com/gabdem13"
-          icon={Twitter}
-        >
-          Twitter
-        </Button>
-        <Button
-          class="!p-0 !text-yellow"
+          class="!p-0 !text-primary"
           variant="text"
           link
           icon={Envelope}

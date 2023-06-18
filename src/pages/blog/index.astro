@@ -18,7 +18,7 @@ const posts = await Astro.glob('./*.mdx')
         posts.map((post) => (
           <li class="flex justify-between !ml-0">
             <div>
-              <a href={post.url} class="text-yellow text-lg">
+              <a href={post.url} class="text-primary text-lg glow-text">
                 {post.frontmatter.title}
               </a>
               <p class="small">{post.frontmatter.description}</p>

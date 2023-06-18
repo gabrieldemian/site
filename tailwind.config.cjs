@@ -23,6 +23,18 @@ module.exports = {
         poppins: 'poppins',
         corben: 'corben',
       },
+      backgroundColor: {
+        primary: 'rgba(var(--primary))',
+        secondary: 'rgba(var(--secondary))',
+      },
+      textColor: {
+        primary: 'rgba(var(--primary))',
+        secondary: 'rgba(var(--secondary))',
+      },
+      borderColor: {
+        primary: 'rgba(var(--primary))',
+        secondary: 'rgba(var(--secondary))',
+      },
     },
   },
   plugins: [
