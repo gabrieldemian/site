@@ -1,17 +1,23 @@
 import clsx from 'clsx'
+import type { JSX } from 'solid-js/jsx-runtime'
 import { Dynamic } from 'solid-js/web'
 
-interface Props {
+interface Base {
   children: string
   variant?: 'primary' | 'secondary' | 'outlined' | 'text'
   size?: 'sm' | 'md'
   fluid?: boolean
-  link?: boolean
   hasPadding?: boolean
   class?: string
   iconClass?: string
   icon?: Element
 }
+
+type Props = (
+  | ({ as?: 'a' } & JSX.HTMLAttributes<HTMLLinkElement>)
+  | ({ as: 'button' } & JSX.HTMLAttributes<HTMLButtonElement>)
+) &
+  Base
 
 const Button = ({
   children,
@@ -19,7 +25,7 @@ const Button = ({
   fluid,
   class: className,
   icon,
-  link = false,
+  as = 'button',
   size = 'md',
   hasPadding = true,
   iconClass = '',
@@ -49,7 +55,7 @@ const Button = ({
   )
 
   return (
-    <Dynamic component={link ? 'a' : 'button'} class={classes} {...rest}>
+    <Dynamic component={as} class={classes} {...rest}>
       {icon && (
         <Dynamic class={`my-auto mr-1 ${iconClass}`} component={icon as any} />
       )}
