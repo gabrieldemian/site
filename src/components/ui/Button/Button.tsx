@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import type { JSX } from 'solid-js/jsx-runtime'
+import type { Component, ComponentProps } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
 
 interface Base {
@@ -10,12 +10,12 @@ interface Base {
   hasPadding?: boolean
   class?: string
   iconClass?: string
-  icon?: Element
+  icon?: Component
 }
 
 type Props = (
-  | ({ as?: 'a' } & JSX.HTMLAttributes<HTMLLinkElement>)
-  | ({ as: 'button' } & JSX.HTMLAttributes<HTMLButtonElement>)
+  | ({ as: 'a' } & ComponentProps<'a'>)
+  | ({ as: 'button' } & ComponentProps<'button'>)
 ) &
   Base
 

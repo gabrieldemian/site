@@ -8,10 +8,12 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "baseUrl": "src/",
-    // "include": ["src"],
     "paths": {
-      // "~/*": "./*"
-      "~/components/*": ["components/*"]
+      "~/components/*": ["components/*"],
+      "~/content/*": ["content/*"],
+      "~/layouts/*": ["layouts/*"],
+      "~/pages/*": ["pages/*"],
+      "~/styles/*": ["styles/*"]
     }
   }
 }

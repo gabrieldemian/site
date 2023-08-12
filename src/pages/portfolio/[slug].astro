@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content'
+import Base from 'layouts/Base.astro'
 
 import { GoBack } from '~/components/ui'
 
-import Base from '~/layouts/Base.astro'
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('portfolio')

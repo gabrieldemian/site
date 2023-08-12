@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content'
 
-import { Envelope, Github, Linkedin } from '~/components/ui/icons'
 import Base from '../layouts/Base.astro'
 import { Button, Project } from '~/components/ui'
+import { Envelope, Github, Linkedin } from '~/components/ui/icons'
 const portfolioEntries = await getCollection('portfolio').then((data) =>
   data.sort((a, b) => a.data.sortOrder - b.data.sortOrder),
 )
@@ -20,7 +20,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
       <div class="flex flex-col sm:flex-row justify-between mt-10 gap-2">
         <div class="flex flex-col sm:flex-row gap-2">
           <Button as="a" href="#about" class="shrink-0">About me</Button>
-          <Button as="a" href="#portfolio" link fluid>Portfolio</Button>
+          <Button as="a" href="#portfolio" fluid>Portfolio</Button>
         </div>
       </div>
     </header>
@@ -45,6 +45,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
       </p>
       <div class="flex flex-col sm:flex-row gap-3">
         <Button
+          as='a'
           href="/gabriel-cv.pdf"
           variant="outlined"
           download="gabriel-cv.pdf"
@@ -52,6 +53,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           Resume.pdf
         </Button>
         <Button
+          as='a'
           href="/recommendation-letter.pdf"
           download="recommendation-letter.pdf"
           variant="outlined"
@@ -101,6 +103,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           class="justify-start !p-0 !text-primary"
           variant="text"
           icon={Linkedin}
+          as='a'
           href="https://linkedin.com/in/gabriel-costa-dev/"
         >
           Linkedin
@@ -109,6 +112,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           class="!p-0 !text-primary"
           icon={Github}
           variant="text"
+          as='a'
           href="https://github.com/gabrieldemian"
         >
           Github
@@ -117,6 +121,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
           class="!p-0 !text-primary"
           variant="text"
           icon={Envelope}
+          as='a'
           href="mailto:gabrielgcr45@gmail.com"
         >
           Email
