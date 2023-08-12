@@ -2,7 +2,7 @@
 import { GoBack } from '~/components/ui'
 import Base from '~/layouts/Base.astro'
 
-const posts = await Astro.glob('./*.mdx')
+// const posts = await Astro.glob('./*.mdx')
 ---
 
 <Base>
@@ -14,21 +14,21 @@ const posts = await Astro.glob('./*.mdx')
     <h1>Blog</h1>
     <p>Posts:</p>
     <ul>
-      {
-        posts.map((post) => (
-          <li class="flex justify-between !ml-0">
-            <div>
-              <a href={post.url} class="text-primary text-lg glow-text">
-                {post.frontmatter.title}
-              </a>
-              <p class="small">{post.frontmatter.description}</p>
-            </div>
-            <time>
-              <i>{post.frontmatter.pubDate}</i>
-            </time>
-          </li>
-        ))
-      }
+      <!-- { -->
+      <!--   posts.map((post) => ( -->
+      <!--     <li class="flex justify-between !ml-0"> -->
+      <!--       <div> -->
+      <!--         <a href={post.url} class="text-primary text-lg glow-text"> -->
+      <!--           {post.frontmatter.title} -->
+      <!--         </a> -->
+      <!--         <p class="small">{post.frontmatter.description}</p> -->
+      <!--       </div> -->
+      <!--       <time> -->
+      <!--         <i>{post.frontmatter.pubDate}</i> -->
+      <!--       </time> -->
+      <!--     </li> -->
+      <!--   )) -->
+      <!-- } -->
     </ul>
   </article>
 </Base>
