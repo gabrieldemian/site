@@ -10,7 +10,7 @@ const GoBack = ({ children = 'Go Back', href = '/' }: Props) => {
   return (
     <Button
       size="sm"
-      link
+      as="a"
       variant="text"
       href={href}
       icon={ArrowLeft as any}

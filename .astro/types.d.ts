@@ -222,6 +222,13 @@ declare module 'astro:content' {
   collection: "portfolio";
   data: InferEntrySchema<"portfolio">
 } & { render(): Render[".md"] };
+"holdings.md": {
+	id: "holdings.md";
+  slug: "holdings";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
 "p2p-chat.md": {
 	id: "p2p-chat.md";
   slug: "p2p-chat";
@@ -236,6 +243,13 @@ declare module 'astro:content' {
   collection: "portfolio";
   data: InferEntrySchema<"portfolio">
 } & { render(): Render[".md"] };
+"vincenzo.mdx": {
+	id: "vincenzo.mdx";
+  slug: "vincenzo";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".mdx"] };
 };
 
 	};

@@ -11,7 +11,7 @@ const CallOut = ({ children, type = 'info', class: className = '' }: Props) => {
 
   const classes = clsx(
     'border-2 border-dashed rounded-lg flex gap-5 [&>p]:!m-0',
-    isInfo ? 'border-peach' : 'border-red',
+    isInfo ? 'border-sapphire' : 'border-red',
     'p-5 my-10',
     'text-text',
     className,

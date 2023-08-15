@@ -2,7 +2,6 @@
 
 @layer base {
   :root {
-    --step--2: clamp(0.89rem, calc(0.87rem + 0.10vw), 0.99rem);
     --step--1: clamp(1.00rem, calc(0.98rem + 0.11vw), 1.11rem);
     --step-0: clamp(1.13rem, calc(1.10rem + 0.13vw), 1.25rem);
     --step-1: clamp(1.27rem, calc(1.24rem + 0.14vw), 1.41rem);
@@ -22,26 +21,24 @@
     @apply text-subtext1;
   }
 
-  p, button {
+  p, a, button, span, li {
     font-size: var(--step-0);
-    line-height: 1.5em;
+    line-height: 1.8rem;
   }
 
   a {
-    font-size: var(--step-0);
-    line-height: 1.5em;
     @apply text-primary relative;
   }
 
   small, .small {
-    line-height: 1.5em;
+    line-height: 1.5rem;
     font-size: var(--step--1);
     @apply text-text font-poppins;
   }
 
   h1, h2, h3, h4, h5, h6, label {
     @apply !font-corben !font-semibold text-subtext1;
-    line-height: 1.5em;
+    line-height: 3rem;
   }
 
   h1 {
@@ -75,6 +72,9 @@
   article a:not(:has(> img))[href^="https://"]:after {
     content: "";
     @apply duration-300 bottom-0 left-0 w-0 h-[1px] absolute bg-gradient-to-r from-red to-mauve;
+  }
+  a[href^="https://"] {
+    color: rgba(var(--primary));
   }
   article a:not(:has(> img))[href^="https://"]:hover:after {
     @apply w-full;
