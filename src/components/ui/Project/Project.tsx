@@ -18,7 +18,7 @@ const Project = ({
       href={`/portfolio/${title.toLowerCase().replace(' ', '-')}`}
     >
       <img
-        class="rounded-lg aspect-video object-cover"
+        class="rounded-lg aspect-video object-fill"
         width="900px"
         height="900px"
         alt={'image of '.concat(title)}
