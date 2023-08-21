@@ -1,32 +1,30 @@
 ---
 import Base from './Base.astro'
 import { GoBack } from '../components/ui'
+import type { MarkdownLayoutProps } from 'astro'
 
-export interface Props {
-  content: {
-    title: string
-    description: string
-    pubDate?: string
-    updatedDate?: string
-    heroImage?: string
-  }
-}
+type Props = MarkdownLayoutProps <{
+  title: string
+  description: string
+  pubDate?: string
+  updatedDate?: string
+  hero?: string
+}>;
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage },
+  frontmatter: { title, description, pubDate, updatedDate, hero },
 } = Astro.props
 ---
 
 <Base title={title} description={description}>
   <article>
     <div class="h-20"></div>
-    {heroImage && <img width={720} height={360} src={heroImage} alt={description} />}
 
     <GoBack href="/blog" />
 
     <h1>{title}</h1>
+    {pubDate && <time class="mb-5">{pubDate}</time>}
 
-    {pubDate && <time>{pubDate}</time>}
     {
       updatedDate && (
         <div>
@@ -34,7 +32,10 @@ const {
         </div>
       )
     }
-    <div class="h-10"></div>
+
+    {hero && <img width={720} height={360} src={hero} alt={description} class="mt-5" />}
+
     <slot />
+
   </article>
 </Base>
