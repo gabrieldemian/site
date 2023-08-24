@@ -21,8 +21,6 @@
     "@astrojs/sitemap": "^2.0.1",
     "@astrojs/solid-js": "^2.2.0",
     "@astrojs/tailwind": "^4.0.0",
-    "@fontsource/corben": "^5.0.8",
-    "@fontsource/poppins": "^5.0.8",
     "astro": "2.10.7",
     "clsx": "^2.0.0",
     "solid-js": "^1.7.11",

@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content'
-
 import Base from '../layouts/Base.astro'
 import { Button, Project } from '~/components/ui'
 import { Envelope, Github, Linkedin } from '~/components/ui/icons'
@@ -10,7 +9,7 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
 ---
 
 <Base>
-  <section class="container max-w-[90ch]"></section>
+  <!-- <section class="container max-w-[90ch]"></section> -->
   <section>
     <header class="container max-w-prose sm:my-20">
       <h1>

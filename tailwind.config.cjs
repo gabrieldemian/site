@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx,astro}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx,astro,mdx}'],
   theme: {
     fontSize: {
       sm: 'var(--step--1)', // small
@@ -20,8 +20,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        poppins: 'poppins',
-        corben: 'corben',
+        urwbookman: 'urwbookman',
       },
       backgroundColor: {
         primary: 'rgba(var(--primary))',
