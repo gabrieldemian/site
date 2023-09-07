@@ -1,0 +1,111 @@
+{
+	"data": [{
+			"rank": 0,
+			"name": "Gabriel",
+			"platforms": [0],
+			"pnl": 29850,
+			"roi": 29850.00,
+			"winrate": 15,
+			"record profit": 29850
+		},
+		{
+			"rank": 1,
+			"name": "Christian",
+			"platforms": [0],
+			"pnl": 29850,
+			"roi": 29850.00,
+			"winrate": 53,
+			"recordProfit": 29850
+		},
+		{
+			"rank": 2,
+			"name": "Ivan",
+			"platforms": [0],
+			"pnl": 29850,
+			"roi": 29850.00,
+			"winrate": 60,
+			"recordProfit": 29850
+		},
+		{
+			"rank": 3,
+			"name": "Michael Jackson",
+			"platforms": [0],
+			"pnl": 29850,
+			"roi": 29850.00,
+			"winrate": 80,
+			"recordProfit": 990850
+		},
+		{
+			"rank": 4,
+			"name": "Tucker Carlson",
+			"platforms": [0],
+			"pnl": 29850,
+			"roi": 29850.00,
+			"winrate": 62,
+			"recordProfit": 90850
+		},
+		{
+			"rank": 5,
+			"name": "CZ",
+			"platforms": [0],
+			"pnl": 29850,
+			"roi": 29850.00,
+			"winrate": 35,
+			"recordProfit": 90850
+		},
+		{
+			"rank": 6,
+			"name": "Someone",
+			"platforms": [0],
+			"pnl": 29850,
+			"roi": 29850.00,
+			"winrate": 99,
+			"recordProfit": 90850
+		},
+		{
+			"rank": 7,
+			"name": "John",
+			"platforms": [0],
+			"pnl": 29850,
+			"roi": 29850.00,
+			"winrate": 70,
+			"recordProfit": 90850
+		},
+		{
+			"rank": 8,
+			"name": "Bla",
+			"platforms": [0],
+			"pnl": 29850,
+			"roi": 29850.00,
+			"winrate": 35,
+			"recordProfit": 90850
+		},
+		{
+			"rank": 9,
+			"name": "Vicente",
+			"platforms": [0],
+			"pnl": 29850,
+			"roi": 29850.00,
+			"winrate": 100,
+			"recordProfit": 90850
+		},
+		{
+			"rank": 10,
+			"name": "Al Capone",
+			"platforms": [0],
+			"pnl": 29850,
+			"roi": 29850.00,
+			"winrate": 100,
+			"recordProfit": 90908230
+		},
+		{
+			"rank": 11,
+			"name": "Vito Genovese",
+			"platforms": [0],
+			"pnl": 29850,
+			"roi": 29850.00,
+			"winrate": 100,
+			"recordProfit": 90908230
+		}
+	]
+}

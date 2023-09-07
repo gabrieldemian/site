@@ -172,7 +172,7 @@
     @apply duration-300 bottom-0 left-0 w-0 h-[1px] absolute bg-gradient-to-r from-red to-mauve;
   }
 
-  a[href^="https://"] {
+  a[href^="https://"], a[href^="http://"] {
     color: rgba(var(--primary));
   }
 

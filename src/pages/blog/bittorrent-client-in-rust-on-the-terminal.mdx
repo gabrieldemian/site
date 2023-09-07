@@ -1,0 +1,40 @@
+---
+layout: ../../layouts/BlogPost.astro
+title: BitTorrent client written in Rust
+description: How, and what I learned while developing Vincenzo
+pubDate: 24/08/2023
+hero: /images/vincenzo.webp
+---
+
+The BitTorrent protocol is quite old, it was released in 2001, and Bitcoin was released in 2009.
+Back then, the internet was mostly decentralized (especially in the 90s).
+People owned their data, hosted their own websites and servers, etc.
+
+Most of the web from those days has died. But these two protocols are survivors of the
+war of the modern internet. They survived, because they are, above everything, _decentralized_.
+
+## The client
+
+So, why did I built another BitTorrent client? We already have BitTorrent, uTorrent, and others.
+The problem is that those clients are just not good anymore. They are infested with ADs
+(from the big tech), malware, the download rate is slowed down on purpose. You have to
+pay if you want to get rid of these. Not good.
+
+Of course, not all clients are like that, and I have used some good clients (like [transmission](https://transmissionbt.com/)).
+But what saddened me is that I couldn't find a client that has support for a terminal UI,
+and since I use the terminal all of the time on the computer, I want everything on the terminal.
+
+## Results
+
+I have built the client in Rust, a safe and fast language. It's MIT license and ADs free,
+multi-platform, and multi-threaded. The performance is very good, similar to the other
+clients. (that don't slow down your download rate on purpose).
+
+The protocol is very rich and there are lots of plugins and features to complement.
+I have added supported for magnet links and UDP connections to trackers.
+
+Some nice-to-haves in the future would be: [DHT](http://www.bittorrent.org/beps/bep_0005.html),
+[PEX](http://www.bittorrent.org/beps/bep_0011.html), among others. But I'm doing this
+by myself, so I don't have a lot of free time to do all of this.
+
+You can access the client [here](https://github.com/gabrieldemian/Vincenzo).
