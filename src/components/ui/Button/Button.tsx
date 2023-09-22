@@ -1,9 +1,9 @@
 import clsx from 'clsx'
-import type { Component, ComponentProps } from 'solid-js'
+import type { Component, ComponentProps, JSXElement } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
 
 interface Base {
-  children: string
+  children: JSXElement
   variant?: 'primary' | 'secondary' | 'outlined' | 'text'
   size?: 'sm' | 'md'
   fluid?: boolean
