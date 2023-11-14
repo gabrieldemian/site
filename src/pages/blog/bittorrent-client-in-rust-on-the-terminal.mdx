@@ -1,40 +1,98 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title: BitTorrent client written in Rust
-description: How, and what I learned while developing Vincenzo
-pubDate: 24/08/2023
+title: Learning distributed systems with BitTorrent protocol
+description: My journey building a BitTorrent client from scratch using Rust
+pubDate: 14/11/2023
 hero: /images/vincenzo.webp
 ---
 
-The BitTorrent protocol is quite old, it was released in 2001, and Bitcoin was released in 2009.
-Back then, the internet was mostly decentralized (especially in the 90s).
-People owned their data, hosted their own websites and servers, etc.
+import { CallOut } from "../../components/ui"
 
-Most of the web from those days has died. But these two protocols are survivors of the
-war of the modern internet. They survived, because they are, above everything, _decentralized_.
+I'm a simple man, one day I woke up thinking "How does BitTorrent works?" and just decided to learn the protocol and implement it, just for fun and curiosity.
 
-## The client
+I thought that I would spend around 1 week to build a minimalistic client... took me about 3 months.
 
-So, why did I built another BitTorrent client? We already have BitTorrent, uTorrent, and others.
-The problem is that those clients are just not good anymore. They are infested with ADs
-(from the big tech), malware, the download rate is slowed down on purpose. You have to
-pay if you want to get rid of these. Not good.
+The BitTorrent protocol is quite old, it was released in 2001, and Bitcoin was released in 2009. 
+
+We had other crypto-currencies before Bitcoin, and other distributed file-systems before BitTorrent, but they all died. However, these two protocols are survivors, they only survived because they are _decentralized_.
+
+## Why
+
+So, why did I built another BitTorrent client? The problem with most clients is that they are infested with ADs that track you, malware, slowed download rate (on purpose), and you have to pay them if you want to get rid of these things.
 
 Of course, not all clients are like that, and I have used some good clients (like [transmission](https://transmissionbt.com/)).
 But what saddened me is that I couldn't find a client that has support for a terminal UI,
 and since I use the terminal all of the time on the computer, I want everything on the terminal.
 
+## The journey
+
+I started the development really ignorant about the distributed systems world and it's problems. So I have faced first-hand fundamental issues like the [CAP Theorem](https://en.wikipedia.org/wiki/CAP_theorem).
+
+I also did things that are really common in distributed systems without even knowing about it, like the [heartbeat detection](https://www.geeksforgeeks.org/heartbeats-detection-a-solution-to-network-failures-in-distributed-systems/)
+
+I have faced many blockers and almost quit multiple times. But there is a specific feeling that I just can't describe (aesthetic satisfaction?) when you are making progress and seeing all the different nodes working that always kept me going until the end.
+
+And finally, I have learned a lot, a lot low level stuff that I truly lacked.
+
+## How the protocol works
+
+<CallOut>
+This is only a high-level and summarized explanation, refer to the official documentation [here](https://www.bittorrent.org/beps/bep_0003.html)
+</CallOut>
+
+### Metainfo and Tracker
+What we call a ".torrent file" is a metainfo file. This file contains information necessary to download the files, such as: piece_length, trackers, etc.
+
+**Trackers** are servers that will give you a list of IPs of the peers in the network for a specific torrent.
+
+Nowadays trackers are not really needed as most clients implement [DHT](https://en.wikipedia.org/wiki/Distributed_hash_table). This makes the protocol even more decentralized.
+
+## Pieces and files
+
+The files are divided between multiple **pieces**, peers download/upload pieces of files. And those pieces are further divided into blocks. Sometimes the pieces do not align with file boundaries, this makes the calculation of the pieces/blocks a complete mess.
+
+```
+/// Visualization of files of a Torrent
+/// --------------------------------------
+/// | f: 10 | f: 32768                   |
+/// ----------------------------------p---
+/// | b: 10 | b: 16384   | b: 16274  |110|
+/// --------------------------------------
+/// f: file
+/// b: block length
+/// p: piece
+```
+
+This reads as: 
+- The Torrent has the piece_length of 32768 bytes.
+- The first file len is 10 bytes, only 1 block of 10 bytes fits.
+- The second file len is 32768 bytes, it has 3 blocks. The first 2 blocks are uneven because the **piece** len ends before the file ends.
+
+Peers will exchange these blocks, and not the full pieces. A few problems that comes with this:
+- Given a block alone, find the corresponding file with the right offset.
+- Generate representations of these blocks, without the actual bytes, for all the files.
+
+# Peers
+
+All the peers have a state to keep track of. By state I mean the relationship of the peers between themselves and the torrent. What pieces does Peer A have? Is Piece B interested in Peer A? etc.
+
+This is what happens when a Torrent download starts:
+- The client requests the peers ips from the tracker.
+- The client connects with the peers.
+- The peers exchange messages to control the state of the peers and the bytes of the files.
+- Eventually the download finishes.
+
+
 ## Results
 
-I have built the client in Rust, a safe and fast language. It's MIT license and ADs free,
-multi-platform, and multi-threaded. The performance is very good, similar to the other
-clients. (that don't slow down your download rate on purpose).
+I have built the client in Rust, a safe and fast language. It's MIT license and ADs free, and more:
 
-The protocol is very rich and there are lots of plugins and features to complement.
-I have added supported for magnet links and UDP connections to trackers.
-
-Some nice-to-haves in the future would be: [DHT](http://www.bittorrent.org/beps/bep_0005.html),
-[PEX](http://www.bittorrent.org/beps/bep_0011.html), among others. But I'm doing this
-by myself, so I don't have a lot of free time to do all of this.
+- Multi-platform.
+- Multithreaded. One OS thread specific for I/O.
+- Async I/O with tokio.
+- Communication with daemon using CLI flags, TCP messages or remotely via UI binary.
+- Detached daemon from the UI.
+- Support for magnet links.
+- 3 Binaries and 1 library.
 
 You can access the client [here](https://github.com/gabrieldemian/Vincenzo).

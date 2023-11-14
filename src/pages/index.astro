@@ -13,12 +13,13 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
   <section>
     <header class="container max-w-prose sm:my-20">
       <h1>
-        Hello! I'm a <strong class="text-white">fullstack engineer</strong> 🚀. Working with Rust, Typescript, React, and more. Living in Estonia.
+        Hello! I'm a <strong class="text-white">fullstack engineer</strong> 🚀 Working with Rust, Typescript, React, and more.
       </h1>
       <div class="flex flex-col sm:flex-row justify-between mt-10 gap-2">
         <div class="flex flex-col sm:flex-row gap-2">
           <Button as="a" href="#about" class="shrink-0">About me</Button>
           <Button as="a" href="#portfolio" fluid>Portfolio</Button>
+          <Button as="a" href="/blog" fluid>Blog</Button>
           <Button as="a" href="/sponsor" fluid>
             <>
             <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="text-flamingo mr-2">
@@ -45,14 +46,14 @@ const portfolioEntries = await getCollection('portfolio').then((data) =>
         <a target="_blank" class="glow-text" href="https://github.com/gabrieldemian/Vincenzo">Vincenzo</a>.
       </p>
       <div class="flex flex-col sm:flex-row gap-3">
-        <Button
-          as='a'
-          href="/gabriel-cv.pdf"
-          variant="outlined"
-          download="gabriel-cv.pdf"
-        >
-          Resume.pdf
-        </Button>
+        <!-- <Button -->
+        <!--   as='a' -->
+        <!--   href="/gabriel-cv.pdf" -->
+        <!--   variant="outlined" -->
+        <!--   download="gabriel-cv.pdf" -->
+        <!-- > -->
+        <!--   Resume.pdf -->
+        <!-- </Button> -->
         <Button
           as='a'
           href="/recommendation-letter.pdf"

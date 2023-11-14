@@ -115,6 +115,10 @@
     @apply rounded-lg px-2 py-1 border border-red/25 text-primary font-thin text-sm;
   }
 
+  pre code span {
+    @apply text-sm;
+  }
+
   .glow, .glow-text {
     @apply relative;
   }
@@ -147,6 +151,10 @@
 
   pre.astro-code code {
     @apply py-2;
+  }
+
+  article pre {
+    @apply mb-5;
   }
 
   pre.astro-code code, pre.astro-code code .line {
