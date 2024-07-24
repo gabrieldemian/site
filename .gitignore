@@ -1,5 +1,7 @@
 # build output
 dist/
+.direnv
+.direnv/
 
 # dependencies
 node_modules/

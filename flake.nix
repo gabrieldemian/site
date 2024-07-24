@@ -19,7 +19,6 @@
               nodejs_22
               vite
               bun
-              yarn
             ];
             # shellHook = ''
             # '';

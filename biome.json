@@ -12,7 +12,15 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"nursery": {
+				"noReactSpecificProps": {
+					"fix": "safe"
+				}
+			},
+			"suspicious": {
+				"noArrayIndexKey": "off"
+			}
 		}
 	}
 }

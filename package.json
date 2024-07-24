@@ -3,7 +3,7 @@
 	"type": "module",
 	"version": "0.0.1",
 	"simple-git-hooks": {
-		"pre-commit": "npm run lint:fix"
+		"pre-commit": "bun run lint:fix"
 	},
 	"scripts": {
 		"prepare": "npx simple-git-hooks",

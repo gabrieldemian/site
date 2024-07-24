@@ -145,11 +145,9 @@
     @apply opacity-100;
   }
 
-  /* make <pre> responsive */
-  /* pre { */
-  /*   white-space: pre-wrap; */
-  /*   word-wrap: break-word; */
-  /* } */
+  .cursor-sword {
+    cursor: url("/sword-cursor.png"), auto;
+  }
 
   pre.astro-code {
     white-space: unset;
