@@ -1,108 +1,36 @@
-declare module "astro:content" {
+declare module 'astro:content' {
 	interface Render {
-		".mdx": Promise<{
-			Content: import("astro").MarkdownInstance<{}>["Content"];
-			headings: import("astro").MarkdownHeading[];
+		'.mdx': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
 			remarkPluginFrontmatter: Record<string, any>;
 		}>;
 	}
 }
 
-declare module "astro:content" {
+declare module 'astro:content' {
 	interface Render {
-		".md": Promise<{
-			Content: import("astro").MarkdownInstance<{}>["Content"];
-			headings: import("astro").MarkdownHeading[];
+		'.md': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
 			remarkPluginFrontmatter: Record<string, any>;
 		}>;
 	}
 }
 
-declare module "astro:content" {
-	export { z } from "astro/zod";
-
+declare module 'astro:content' {
 	type Flatten<T> = T extends { [K: string]: infer U } ? U : never;
-	export type CollectionEntry<C extends keyof AnyEntryMap> = Flatten<
-		AnyEntryMap[C]
-	>;
 
-	// TODO: Remove this when having this fallback is no longer relevant. 2.3? 3.0? - erika, 2023-04-04
-	/**
-	 * @deprecated
-	 * `astro:content` no longer provide `image()`.
-	 *
-	 * Please use it through `schema`, like such:
-	 * ```ts
-	 * import { defineCollection, z } from "astro:content";
-	 *
-	 * defineCollection({
-	 *   schema: ({ image }) =>
-	 *     z.object({
-	 *       image: image(),
-	 *     }),
-	 * });
-	 * ```
-	 */
-	export const image: never;
+	export type CollectionKey = keyof AnyEntryMap;
+	export type CollectionEntry<C extends CollectionKey> = Flatten<AnyEntryMap[C]>;
 
-	// This needs to be in sync with ImageMetadata
-	export type ImageFunction = () => import("astro/zod").ZodObject<{
-		src: import("astro/zod").ZodString;
-		width: import("astro/zod").ZodNumber;
-		height: import("astro/zod").ZodNumber;
-		format: import("astro/zod").ZodUnion<
-			[
-				import("astro/zod").ZodLiteral<"png">,
-				import("astro/zod").ZodLiteral<"jpg">,
-				import("astro/zod").ZodLiteral<"jpeg">,
-				import("astro/zod").ZodLiteral<"tiff">,
-				import("astro/zod").ZodLiteral<"webp">,
-				import("astro/zod").ZodLiteral<"gif">,
-				import("astro/zod").ZodLiteral<"svg">,
-			]
-		>;
-	}>;
-
-	type BaseSchemaWithoutEffects =
-		| import("astro/zod").AnyZodObject
-		| import("astro/zod").ZodUnion<import("astro/zod").AnyZodObject[]>
-		| import("astro/zod").ZodDiscriminatedUnion<
-				string,
-				import("astro/zod").AnyZodObject[]
-		  >
-		| import("astro/zod").ZodIntersection<
-				import("astro/zod").AnyZodObject,
-				import("astro/zod").AnyZodObject
-		  >;
-
-	type BaseSchema =
-		| BaseSchemaWithoutEffects
-		| import("astro/zod").ZodEffects<BaseSchemaWithoutEffects>;
-
-	export type SchemaContext = { image: ImageFunction };
-
-	type DataCollectionConfig<S extends BaseSchema> = {
-		type: "data";
-		schema?: S | ((context: SchemaContext) => S);
-	};
-
-	type ContentCollectionConfig<S extends BaseSchema> = {
-		type?: "content";
-		schema?: S | ((context: SchemaContext) => S);
-	};
-
-	type CollectionConfig<S> =
-		| ContentCollectionConfig<S>
-		| DataCollectionConfig<S>;
-
-	export function defineCollection<S extends BaseSchema>(
-		input: CollectionConfig<S>,
-	): CollectionConfig<S>;
+	export type ContentCollectionKey = keyof ContentEntryMap;
+	export type DataCollectionKey = keyof DataEntryMap;
 
 	type AllValuesOf<T> = T extends any ? T[keyof T] : never;
 	type ValidContentEntrySlug<C extends keyof ContentEntryMap> = AllValuesOf<
 		ContentEntryMap[C]
-	>["slug"];
+	>['slug'];
 
 	export function getEntryBySlug<
 		C extends keyof ContentEntryMap,
@@ -110,26 +38,23 @@ declare module "astro:content" {
 	>(
 		collection: C,
 		// Note that this has to accept a regular string too, for SSR
-		entrySlug: E,
+		entrySlug: E
 	): E extends ValidContentEntrySlug<C>
 		? Promise<CollectionEntry<C>>
 		: Promise<CollectionEntry<C> | undefined>;
 
-	export function getDataEntryById<
-		C extends keyof DataEntryMap,
-		E extends keyof DataEntryMap[C],
-	>(collection: C, entryId: E): Promise<CollectionEntry<C>>;
-
-	export function getCollection<
-		C extends keyof AnyEntryMap,
-		E extends CollectionEntry<C>,
-	>(
+	export function getDataEntryById<C extends keyof DataEntryMap, E extends keyof DataEntryMap[C]>(
 		collection: C,
-		filter?: (entry: CollectionEntry<C>) => entry is E,
+		entryId: E
+	): Promise<CollectionEntry<C>>;
+
+	export function getCollection<C extends keyof AnyEntryMap, E extends CollectionEntry<C>>(
+		collection: C,
+		filter?: (entry: CollectionEntry<C>) => entry is E
 	): Promise<E[]>;
 	export function getCollection<C extends keyof AnyEntryMap>(
 		collection: C,
-		filter?: (entry: CollectionEntry<C>) => unknown,
+		filter?: (entry: CollectionEntry<C>) => unknown
 	): Promise<CollectionEntry<C>[]>;
 
 	export function getEntry<
@@ -155,7 +80,7 @@ declare module "astro:content" {
 		E extends ValidContentEntrySlug<C> | (string & {}),
 	>(
 		collection: C,
-		slug: E,
+		slug: E
 	): E extends ValidContentEntrySlug<C>
 		? Promise<CollectionEntry<C>>
 		: Promise<CollectionEntry<C> | undefined>;
@@ -164,7 +89,7 @@ declare module "astro:content" {
 		E extends keyof DataEntryMap[C] | (string & {}),
 	>(
 		collection: C,
-		id: E,
+		id: E
 	): E extends keyof DataEntryMap[C]
 		? Promise<DataEntryMap[C][E]>
 		: Promise<CollectionEntry<C> | undefined>;
@@ -174,19 +99,19 @@ declare module "astro:content" {
 		entries: {
 			collection: C;
 			slug: ValidContentEntrySlug<C>;
-		}[],
+		}[]
 	): Promise<CollectionEntry<C>[]>;
 	export function getEntries<C extends keyof DataEntryMap>(
 		entries: {
 			collection: C;
 			id: keyof DataEntryMap[C];
-		}[],
+		}[]
 	): Promise<CollectionEntry<C>[]>;
 
 	export function reference<C extends keyof AnyEntryMap>(
-		collection: C,
-	): import("astro/zod").ZodEffects<
-		import("astro/zod").ZodString,
+		collection: C
+	): import('astro/zod').ZodEffects<
+		import('astro/zod').ZodString,
 		C extends keyof ContentEntryMap
 			? {
 					collection: C;
@@ -201,72 +126,74 @@ declare module "astro:content" {
 	// if `dev` is not running to update as you edit.
 	// Invalid collection names will be caught at build time.
 	export function reference<C extends string>(
-		collection: C,
-	): import("astro/zod").ZodEffects<import("astro/zod").ZodString, never>;
+		collection: C
+	): import('astro/zod').ZodEffects<import('astro/zod').ZodString, never>;
 
 	type ReturnTypeOrOriginal<T> = T extends (...args: any[]) => infer R ? R : T;
-	type InferEntrySchema<C extends keyof AnyEntryMap> =
-		import("astro/zod").infer<
-			ReturnTypeOrOriginal<Required<ContentConfig["collections"][C]>["schema"]>
-		>;
+	type InferEntrySchema<C extends keyof AnyEntryMap> = import('astro/zod').infer<
+		ReturnTypeOrOriginal<Required<ContentConfig['collections'][C]>['schema']>
+	>;
 
 	type ContentEntryMap = {
-		portfolio: {
-			"codyfight.md": {
-				id: "codyfight.md";
-				slug: "codyfight";
-				body: string;
-				collection: "portfolio";
-				data: InferEntrySchema<"portfolio">;
-			} & { render(): Render[".md"] };
-			"dashboard.md": {
-				id: "dashboard.md";
-				slug: "dashboard";
-				body: string;
-				collection: "portfolio";
-				data: InferEntrySchema<"portfolio">;
-			} & { render(): Render[".md"] };
-			"dots.md": {
-				id: "dots.md";
-				slug: "dots";
-				body: string;
-				collection: "portfolio";
-				data: InferEntrySchema<"portfolio">;
-			} & { render(): Render[".md"] };
-			"holdings.md": {
-				id: "holdings.md";
-				slug: "holdings";
-				body: string;
-				collection: "portfolio";
-				data: InferEntrySchema<"portfolio">;
-			} & { render(): Render[".md"] };
-			"p2p-chat.md": {
-				id: "p2p-chat.md";
-				slug: "p2p-chat";
-				body: string;
-				collection: "portfolio";
-				data: InferEntrySchema<"portfolio">;
-			} & { render(): Render[".md"] };
-			"the-vault.md": {
-				id: "the-vault.md";
-				slug: "the-vault";
-				body: string;
-				collection: "portfolio";
-				data: InferEntrySchema<"portfolio">;
-			} & { render(): Render[".md"] };
-			"vincenzo.mdx": {
-				id: "vincenzo.mdx";
-				slug: "vincenzo";
-				body: string;
-				collection: "portfolio";
-				data: InferEntrySchema<"portfolio">;
-			} & { render(): Render[".mdx"] };
-		};
+		"portfolio": {
+"codyfight.md": {
+	id: "codyfight.md";
+  slug: "codyfight";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"dashboard.md": {
+	id: "dashboard.md";
+  slug: "dashboard";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"dots.md": {
+	id: "dots.md";
+  slug: "dots";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"holdings.md": {
+	id: "holdings.md";
+  slug: "holdings";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"p2p-chat.md": {
+	id: "p2p-chat.md";
+  slug: "p2p-chat";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"the-vault.md": {
+	id: "the-vault.md";
+  slug: "the-vault";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".md"] };
+"vincenzo.mdx": {
+	id: "vincenzo.mdx";
+  slug: "vincenzo";
+  body: string;
+  collection: "portfolio";
+  data: InferEntrySchema<"portfolio">
+} & { render(): Render[".mdx"] };
+};
+
 	};
 
-	type DataEntryMap = {};
+	type DataEntryMap = {
+		
+	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = typeof import("../src/content/config");
+	export type ContentConfig = typeof import("../src/content/config.js");
 }

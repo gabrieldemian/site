@@ -16,7 +16,9 @@ const Github = ({
 			height={height}
 			viewBox="0 0 48 48"
 			fill="none"
+			role="img"
 			class={`inline-block ${className}`}
+			aria-label="github icon"
 		>
 			<g id="SVGRepo_bgCarrier" stroke-width="0" />
 			<g
@@ -25,7 +27,7 @@ const Github = ({
 				stroke-linejoin="round"
 			/>
 			<g id="SVGRepo_iconCarrier">
-				<rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+				<rect width="48" height="48" fill="white" fill-opacity="0.01" />
 				<path
 					fill-rule="evenodd"
 					clip-rule="evenodd"

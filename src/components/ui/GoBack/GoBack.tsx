@@ -1,8 +1,9 @@
+import type { JSXElement } from "solid-js";
 import Button from "../Button";
 import { ArrowLeft } from "../icons";
 
 interface Props {
-	children?: any;
+	children?: JSXElement;
 	href?: "/blog" | "/";
 }
 
@@ -13,7 +14,7 @@ const GoBack = ({ children = "Go Back", href = "/" }: Props) => {
 			as="a"
 			variant="text"
 			href={href}
-			icon={ArrowLeft as any}
+			icon={ArrowLeft}
 			class="!px-0 glow-text-secondary"
 			iconClass="group-hover:-translate-x-[25%] duration-300"
 		>

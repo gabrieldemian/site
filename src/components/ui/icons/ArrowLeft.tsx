@@ -13,6 +13,8 @@ const ArrowLeft = ({
 }: Props) => {
 	return (
 		<svg
+			aria-label="arrow left"
+			role="img"
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
 			viewBox="0 0 24 24"

@@ -56,9 +56,7 @@ const Button = ({
 
 	return (
 		<Dynamic component={as} class={classes} {...rest}>
-			{icon && (
-				<Dynamic class={`my-auto mr-1 ${iconClass}`} component={icon as any} />
-			)}
+			<Dynamic class={`my-auto mr-1 ${iconClass}`} component={icon} />
 			{children}
 		</Dynamic>
 	);
