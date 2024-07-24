@@ -83,7 +83,7 @@ const portfolioEntries = await getCollection("portfolio").then((data) =>
           <Project
             class={
               entrie.data.title === 'Dots'
-                ? 'row-span-2 [&_img]:h-full [&_img]:!object-cover'
+                ? 'row-span-2 [&_img]:h-full'
                 : ''
             }
             title={entrie.data.title}
