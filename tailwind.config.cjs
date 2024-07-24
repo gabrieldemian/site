@@ -34,6 +34,38 @@ module.exports = {
 				primary: "rgba(var(--primary))",
 				secondary: "rgba(var(--secondary))",
 			},
+			animation: {
+				"soul-escaping-body": "soul-escaping-body 5s ease-in-out",
+			},
+			keyframes: {
+				"soul-escaping-body": {
+					"0%": {
+						opacity: 0.5,
+						bottom: 0,
+						left: 0,
+					},
+					"25%": {
+						opacity: 0.4,
+						bottom: "5rem",
+						left: "1rem",
+					},
+					"50%": {
+						opacity: 0.25,
+						bottom: "10rem",
+						left: "-1rem",
+					},
+					"75%": {
+						opacity: 0.22,
+						bottom: "20rem",
+						left: "1rem",
+					},
+					"100%": {
+						opacity: 0.0,
+						bottom: "55rem",
+						left: "0rem",
+					},
+				},
+			},
 		},
 	},
 	plugins: [
