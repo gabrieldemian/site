@@ -19,7 +19,7 @@ const posts = await Astro.glob("./*.mdx");
           <li class="group flex rounded-md shadow-md justify-between bg-base hover:bg-crust duration-300 !ml-0">
             <a class="flex p-2.5 justify-between w-full" href={post.url}>
               <div>
-                <p class="text-text mb-1 group-hover:text-primary group-hover:drop-shadow-[0px_0px_8px_rgba(var(--primary))] duration-300">
+                <p class="text-text font-bold mb-1 group-hover:text-primary group-hover:drop-shadow-[0px_0px_8px_rgba(var(--primary))] duration-300">
                   {post.frontmatter.title}
                 </p>
                 <p class="small mb-0">{post.frontmatter.description}</p>

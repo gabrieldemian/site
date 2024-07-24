@@ -3,19 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    src: url("/urwbookman-light.otf");
-    font-family: urwbookman;
-    font-weight: light;
-  }
-
-  @font-face {
-    src: url("/urwbookman-lightitalic.otf");
-    font-family: urwbookman;
-    font-weight: light;
-    font-style: italic;
-  }
-
   :root {
     --step--1: clamp(1.00rem, calc(0.98rem + 0.11vw), 1.11rem);
     --step-0: clamp(1.13rem, calc(1.10rem + 0.13vw), 1.25rem);
@@ -35,7 +22,7 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @apply text-subtext0 font-urwbookman bg-crust;
+    @apply text-subtext0 font-monospace bg-crust;
   }
 
   strong {

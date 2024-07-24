@@ -21,7 +21,7 @@ const Project = ({
 				class="rounded-lg aspect-video object-fill"
 				width="900px"
 				height="900px"
-				alt={"image of ".concat(title)}
+				alt={title}
 				src={image}
 			/>
 			<footer class="absolute flex inset-0 bg-crust/50 p-5 opacity-0 duration-300 ease-linear">

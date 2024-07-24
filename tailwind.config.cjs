@@ -20,7 +20,7 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				urwbookman: "urwbookman",
+				monospace: "monospace new",
 			},
 			backgroundColor: {
 				primary: "rgba(var(--primary))",
@@ -38,7 +38,7 @@ module.exports = {
 	},
 	plugins: [
 		require("@catppuccin/tailwindcss")({
-			defaultFlavour: "mocha",
+			defaultFlavour: "macchiato",
 		}),
 	],
 };
