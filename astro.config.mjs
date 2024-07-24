@@ -11,6 +11,6 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
 	publicDir: "public",
-	site: "https://gabriel-site.vercel.app",
+	site: "https://glombardo.dev",
 	integrations: [mdx(), sitemap(), tailwind(), solidJs()],
 });
