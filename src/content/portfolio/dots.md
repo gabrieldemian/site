@@ -2,7 +2,7 @@
 title: Dots
 description: DOTs Interactive NFT with Solidjs and GraphQL.
 image: "/images/dot.webp"
-link: "https://opensea.io/collection/inhabitants-dots"
+link: "https://opensea.io/collection/metahero-dots"
 sortOrder: 2
 ---
 
