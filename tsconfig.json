@@ -1,19 +1,19 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js",
-    "resolveJsonModule": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "baseUrl": "src/",
-    "paths": {
-      "~/components/*": ["components/*"],
-      "~/content/*": ["content/*"],
-      "~/layouts/*": ["layouts/*"],
-      "~/pages/*": ["pages/*"],
-      "~/styles/*": ["styles/*"]
-    }
-  }
+	"extends": "astro/tsconfigs/strict",
+	"compilerOptions": {
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js",
+		"resolveJsonModule": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"baseUrl": "src/",
+		"paths": {
+			"~/components/*": ["components/*"],
+			"~/content/*": ["content/*"],
+			"~/layouts/*": ["layouts/*"],
+			"~/pages/*": ["pages/*"],
+			"~/styles/*": ["styles/*"]
+		}
+	}
 }

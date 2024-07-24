@@ -6,13 +6,13 @@ pubDate: 14/11/2023
 hero: /images/vincenzo.webp
 ---
 
-import { CallOut } from "../../components/ui"
+import { CallOut } from '../../components/ui'
 
 I'm a simple man, one day I woke up thinking "How does BitTorrent works?" and just decided to learn the protocol and implement it, just for fun and curiosity.
 
 I thought that I would spend around 1 week to build a minimalistic client... took me about 3 months.
 
-The BitTorrent protocol is quite old, it was released in 2001, and Bitcoin was released in 2009. 
+The BitTorrent protocol is quite old, it was released in 2001, and Bitcoin was released in 2009.
 
 We had other crypto-currencies before Bitcoin, and other distributed file-systems before BitTorrent, but they all died. However, these two protocols are survivors, they only survived because they are _decentralized_.
 
@@ -37,10 +37,12 @@ And finally, I have learned a lot, a lot low level stuff that I truly lacked.
 ## How the protocol works
 
 <CallOut>
-This is only a high-level and summarized explanation, refer to the official documentation [here](https://www.bittorrent.org/beps/bep_0003.html)
+  This is only a high-level and summarized explanation, refer to the official
+  documentation [here](https://www.bittorrent.org/beps/bep_0003.html)
 </CallOut>
 
 ### Metainfo and Tracker
+
 What we call a ".torrent file" is a metainfo file. This file contains information necessary to download the files, such as: piece_length, trackers, etc.
 
 **Trackers** are servers that will give you a list of IPs of the peers in the network for a specific torrent.
@@ -63,12 +65,14 @@ The files are divided between multiple **pieces**, peers download/upload pieces 
 /// p: piece
 ```
 
-This reads as: 
+This reads as:
+
 - The Torrent has the piece_length of 32768 bytes.
 - The first file len is 10 bytes, only 1 block of 10 bytes fits.
 - The second file len is 32768 bytes, it has 3 blocks. The first 2 blocks are uneven because the **piece** len ends before the file ends.
 
 Peers will exchange these blocks, and not the full pieces. A few problems that comes with this:
+
 - Given a block alone, find the corresponding file with the right offset.
 - Generate representations of these blocks, without the actual bytes, for all the files.
 
@@ -77,11 +81,11 @@ Peers will exchange these blocks, and not the full pieces. A few problems that c
 All the peers have a state to keep track of. By state I mean the relationship of the peers between themselves and the torrent. What pieces does Peer A have? Is Piece B interested in Peer A? etc.
 
 This is what happens when a Torrent download starts:
+
 - The client requests the peers ips from the tracker.
 - The client connects with the peers.
 - The peers exchange messages to control the state of the peers and the bytes of the files.
 - Eventually the download finishes.
-
 
 ## Results
 

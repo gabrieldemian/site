@@ -1,19 +1,19 @@
 ---
-import Base from './Base.astro'
-import { GoBack } from '../components/ui'
-import type { MarkdownLayoutProps } from 'astro'
+import type { MarkdownLayoutProps } from "astro";
+import { GoBack } from "../components/ui";
+import Base from "./Base.astro";
 
-type Props = MarkdownLayoutProps <{
-  title: string
-  description: string
-  pubDate?: string
-  updatedDate?: string
-  hero?: string
+type Props = MarkdownLayoutProps<{
+	title: string;
+	description: string;
+	pubDate?: string;
+	updatedDate?: string;
+	hero?: string;
 }>;
 
 const {
-  frontmatter: { title, description, pubDate, updatedDate, hero },
-} = Astro.props
+	frontmatter: { title, description, pubDate, updatedDate, hero },
+} = Astro.props;
 ---
 
 <Base title={title} description={description}>
