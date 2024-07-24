@@ -13,7 +13,7 @@ const portfolioEntries = await getCollection("portfolio").then((data) =>
   <section>
     <header class="container max-w-prose sm:my-20">
       <h1>
-        Hello! I'm a <strong class="text-white">fullstack engineer</strong> 🚀 Working with Rust, Typescript, React, and more.
+        Hello! I'm a <strong class="text-white">fullstack engineer</strong> Working with Rust, Typescript, React, and more.
       </h1>
       <div class="flex flex-col sm:flex-row justify-between mt-10 gap-2">
         <div class="flex flex-col sm:flex-row gap-2">
@@ -35,25 +35,55 @@ const portfolioEntries = await getCollection("portfolio").then((data) =>
 
   <section class="bg-base rounded-md py-10" id="about">
     <div class="article">
-      <h2>About me</h2>
-      <p>
-        I love working with complex things, studying, and the feeling of evolution.
-        I'm deeply interested by (but not limited to):
-        Decentralized systems, Neovim, Linux, Bitcoin, multi-threaded programs, networking systems, UI design, etc.
-      </p>
-      <p>
-        I'm also the creator of a free and open-source project called
-        <a target="_blank" class="glow-text" href="https://github.com/gabrieldemian/Vincenzo">Vincenzo</a>.
-      </p>
+      <a href="#about">
+        <h2>About me</h2>
+      </a>
+      <pre class="sm:hidden flex justify-center">
+ __________________________ 
+/ I love working with code \
+| and rewarding things.    |
+|                          |
+| I'm deeply interested by |
+| (but not limited to):    |
+|                          |
+| Decentralized systems,   |
+| Neovim, Linux, Bitcoin   |
+| multi-threaded, programs,|
+\ networking systems,etc.  /
+ -------------------------- 
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+      </pre>
+      <pre class="hidden sm:flex justify-center">
+ ______________________________________ 
+/ I love working with code and rewar-  \
+| ding things.                          |
+|                                       |
+| I'm deeply interested by (but not     |
+| limited to):                          |
+|                                       |
+| Decentralized systems, Neovim, Linux, |
+| Bitcoin, multi-threaded programs,     |
+\ networking systems, UI design, etc.   /
+ --------------------------------------- 
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+      </pre>
       <div class="flex flex-col sm:flex-row gap-3">
-        <!-- <Button -->
-        <!--   as='a' -->
-        <!--   href="/gabriel-cv.pdf" -->
-        <!--   variant="outlined" -->
-        <!--   download="gabriel-cv.pdf" -->
-        <!-- > -->
-        <!--   Resume.pdf -->
-        <!-- </Button> -->
+        <Button
+          as='a'
+          href="/gabriel-cv.pdf"
+          variant="outlined"
+          download="gabriel-cv.pdf"
+        >
+          R&eacute;sum&eacute;.pdf
+        </Button>
         <Button
           as='a'
           href="/recommendation-letter.pdf"
@@ -68,7 +98,9 @@ const portfolioEntries = await getCollection("portfolio").then((data) =>
 
   <section id="portfolio">
     <div class="article">
-      <h2>Portfolio</h2>
+      <a href="#portfolio">
+        <h2>Portfolio</h2>
+      </a>
       <p>
         Only my best work is listed here. Click on a project to read more about
         it.
@@ -97,7 +129,9 @@ const portfolioEntries = await getCollection("portfolio").then((data) =>
 
   <section id="contact">
     <div class="article">
-      <h2>Contact</h2>
+      <a href="#contact">
+        <h2>Contact</h2>
+      </a>
       <p>You can contact me through:</p>
 
       <div class="flex flex-wrap gap-10">

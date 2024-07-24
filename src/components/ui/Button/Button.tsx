@@ -33,7 +33,7 @@ const Button = ({
 }: Props) => {
 	const options = {
 		variants: {
-			primary: "bg-primary text-white glow",
+			primary: "bg-primary text-crust glow",
 			secondary: "bg-crust text-white",
 			outlined:
 				"glow bg-base border-dashed border-2 border-primary !text-primary hover:!text-white",
