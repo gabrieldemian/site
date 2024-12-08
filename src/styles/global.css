@@ -2,7 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+
+}
+
 @layer base {
+  @font-face {
+    font-family: "pixelcode";
+    src: url("../../public/fonts/pixelcode/PixelCode.otf");
+    font-weight: 400; /* normal */
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "pixelcode";
+    src: url("../../public/fonts/pixelcode/PixelCode-Medium.otf");
+    font-weight: 600; /* normal */
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "pixelcode";
+    src: url("../../public/fonts/pixelcode/PixelCode-Light.otf");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "pixelcode";
+    src: url("../../public/fonts/pixelcode/PixelCode-ExtraLight.otf");
+    font-weight: 200;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "pixelcode";
+    src: url("../../public/fonts/pixelcode/PixelCode-Italic.otf");
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "pixelcode";
+    src: url("../../public/fonts/pixelcode/PixelCode-DemiBold.otf");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "pixelcode";
+    src: url("../../public/fonts/pixelcode/PixelCode-Bold.otf");
+    font-weight: 700;
+    font-style: normal;
+  }
 
   :root {
     --step--1: clamp(1rem, calc(0.98rem + 0.11vw), 1.11rem);
@@ -24,7 +76,7 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @apply text-subtext0 font-monospace bg-crust;
+    @apply text-subtext0 font-pixelcode bg-crust;
   }
 
   strong {
@@ -159,10 +211,6 @@
     @apply py-2;
   }
 
-  article pre {
-    @apply mb-5;
-  }
-
   pre.astro-code code,
   pre.astro-code code .line {
     @apply w-full inline-block;
@@ -178,48 +226,53 @@
     display: inline-block;
     @apply w-10 ml-3 mt-1;
   }
-  /*
-  *   Only style <a> that beggings with `https://`
-  *   that is not followed by an <img>
-  **/
-  article a:not(:has(> img))[href^="https://"]:after
-  {
-    content: "";
-    @apply duration-300 bottom-0 left-0 w-0 h-[1px] absolute bg-gradient-to-r from-red to-mauve;
-  }
 
   a[href^="https://"], a[href^="http://"]
   {
     color: rgba(var(--primary));
   }
 
-  article a:not(:has(> img))[href^="https://"]:hover:after
+  /*
+  *   Only style <a> that beggings with `https://`
+  *   that is not followed by an <img>
+  **/
+  article a:not(:has(> img))[href^="https://"]:after,
+  .article a:not(:has(> img))[href^="https://"]:after,
+  {
+    content: "";
+    @apply duration-300 bottom-0 left-0 w-0 h-[1px] absolute bg-gradient-to-r from-red to-mauve;
+  }
+
+  article a:not(:has(> img))[href^="https://"]:hover:after,
+  .article a:not(:has(> img))[href^="https://"]:hover:after
   {
     @apply w-full;
   }
 
-  article,
-  .article {
-    @apply mx-auto max-w-prose container;
+  article pre, .article pre {
+    @apply mb-5;
+  }
+
+  article, .article {
+    @apply mx-auto max-w-[60ch] container;
   }
 
   article :is(h1, h2, h3, h4, h5, h6),
   .article :is(h1, h2, h3, h4, h5, h6) {
-    @apply mb-5 text-slate-200;
+    @apply mb-5 text-slate-200 mt-10;
   }
 
-  article ul,
-  .article ul {
+  article ul, .article ul {
     @apply mb-5;
   }
 
-  article ul li,
-  .article ul li {
-    @apply list-disc list-inside ml-5;
+  article ul li, .article ul li {
+    @apply list-inside mb-3;
+    list-style: square;
+    list-style-position: inside;
   }
 
-  article p,
-  .article p {
+  article p, .article p {
     @apply mb-5;
   }
 
@@ -235,10 +288,7 @@
     @apply font-thin;
   }
   section {
-    @apply my-10;
-  }
-  article {
-    @apply max-w-prose mx-auto;
+    @apply mt-10;
   }
   img {
     width: 100%;

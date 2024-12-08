@@ -17,11 +17,9 @@
         devShell = mkShell {
           packages = [
             nodejs_22
-            vite
             bun
+            biome
           ];
-          # shellHook = ''
-          # '';
         };
       }
     );

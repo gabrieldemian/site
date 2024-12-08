@@ -21,6 +21,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				monospace: "monospace new",
+				pixelcode: "pixelcode",
 			},
 			backgroundColor: {
 				primary: "rgba(var(--primary))",

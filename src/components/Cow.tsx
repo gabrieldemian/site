@@ -35,7 +35,7 @@ const CowBody = ({ attack, life, maxLife, deleting }: Props): JSXElement => {
 		return (
 			<pre
 				style={{ "animation-delay": "2s", opacity: 0 }}
-				class="text-sapphire inline cursor-pointer absolute animate-soul-escaping-body flex justify-center"
+				class="inline flex absolute justify-center cursor-pointer font-pixelcode text-sapphire animate-soul-escaping-body"
 			>
 				{`                 ^__^
                  (xx)\_________
@@ -47,10 +47,14 @@ const CowBody = ({ attack, life, maxLife, deleting }: Props): JSXElement => {
 	};
 
 	return (
-		<pre class="inline cursor-sword" onKeyUp={attack} onClick={attack}>
+		<pre
+			class="inline font-pixelcode cursor-sword"
+			onKeyUp={attack}
+			onClick={attack}
+		>
 			{renderCow()}
 			{life().length === 0 && renderSoul()}
-			<div class="absolute flex gap-2 bottom-5 left-0">
+			<div class="flex absolute left-0 bottom-5 gap-2">
 				<For each={life()}>
 					{(_, i) => (
 						<img
@@ -69,7 +73,7 @@ const CowBody = ({ attack, life, maxLife, deleting }: Props): JSXElement => {
 										}
 									: {}),
 							}}
-							class="cursor-pointer w-[38px] h-[32px] duration-300 transition-all ease-in"
+							class="transition-all duration-300 ease-in cursor-pointer w-[38px] h-[32px]"
 							src="/heart.png"
 							alt="heart"
 						/>
@@ -102,8 +106,8 @@ export default function Cow() {
 	};
 
 	return (
-		<pre class="font-bold relative">
-			<pre class="sm:hidden inline justify-center pb-0">
+		<div class="relative font-bold">
+			<pre class="inline justify-center pb-0 sm:hidden font-pixelcode">
 				{`__________________________ 
 / I love working with code \\
 | and rewarding things.    |
@@ -118,7 +122,7 @@ export default function Cow() {
  -------------------------- 
           `}
 			</pre>
-			<pre class="hidden sm:inline justify-center pb-0">
+			<pre class="hidden justify-center pb-0 sm:inline font-pixelcode">
 				{`_____________________________________ 
 / I love working with code and rewar-  \\
 | ding things.                          |
@@ -138,6 +142,6 @@ export default function Cow() {
 				attack={attack}
 				life={life}
 			/>
-		</pre>
+		</div>
 	);
 }

@@ -24,7 +24,7 @@ const Button = ({
 	variant,
 	fluid,
 	class: className,
-	icon,
+	icon: Icon,
 	as = "button",
 	size = "md",
 	hasPadding = true,
@@ -46,7 +46,7 @@ const Button = ({
 	} as const;
 
 	const classes = clsx(
-		"inline-flex justify-center items-center group duration-300",
+		"flex justify-center items-center group duration-300",
 		"rounded-md",
 		hasPadding && options.sizes[size],
 		options.variants[variant ?? "primary"],
@@ -56,8 +56,14 @@ const Button = ({
 
 	return (
 		<Dynamic component={as} class={classes} {...rest}>
-			<Dynamic class={`my-auto mr-1 ${iconClass}`} component={icon} />
-			{children}
+			{Icon ? (
+				<>
+					<Dynamic class={`mr-3 inline-block ${iconClass}`} component={Icon} />
+					<span>{children}</span>
+				</>
+			) : (
+				children
+			)}
 		</Dynamic>
 	);
 };
