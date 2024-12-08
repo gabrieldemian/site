@@ -6,6 +6,8 @@ link: "https://holdings.io"
 sortOrder: 2
 ---
 
+My role was as a senior fullstack developer, working with Rust on the backend and React on the frontend.
+
 ## Notable accomplishments
 - Increased the performance of the website from 75% to 95% on Google Lighthouse
 - Developed and maintained new features for security and permissions of users.
