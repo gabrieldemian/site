@@ -115,9 +115,10 @@ export default function Cow() {
 | I'm deeply interested in |
 | (but not limited to):    |
 |                          |
+| Rust, Nix, Bitcoin,      |
 | Decentralized systems,   |
-| Neovim, Linux, Bitcoin   |
-| multi-threaded, programs,|
+| Neovim, Linux            |
+| multi-threaded, programs |
 \\ networking systems,etc. /
  -------------------------- 
           `}
@@ -130,8 +131,9 @@ export default function Cow() {
 | I'm deeply interested in (but not     |
 | limited to):                          |
 |                                       |
+| Rust, Nix, Bitcoin,                   |
 | Decentralized systems, Neovim, Linux, |
-| Bitcoin, multi-threaded programs,     |
+| multi-threaded programs,              |
 \\ networking systems, UI design, etc.  /
 --------------------------------------- 
           `}

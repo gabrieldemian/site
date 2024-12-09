@@ -3,11 +3,21 @@ title: Dots
 description: DOTs Interactive NFT with Solidjs and GraphQL.
 image: "/images/dot.webp"
 link: "https://opensea.io/collection/metahero-dots"
-sortOrder: 2
+sortOrder: 3
 ---
 
-## Requirements
-I needed to build a interactive NFT (which is a html file with JS). It needed to be fast and lightweight, because it will be rendered on marketplaces. It also needed to get data from 2 APIs, one of them was in `GraphQL`.
+## About
 
-## What I did
-I developed the INFT using `solid` with `typescript` for type-safety, and did the `GraphQL` calls using native `fetch` to reduce bundle size even more.
+My second project for *Pixel Vault*.
+
+First, I did research around interactive NFTs to know if it was possible to create this project.
+
+These "INFTs" are not static images, they are HTML pages with CSS and Javascript for interactivity.
+
+The idea around this collection is that you have robots that **evolve** and change their main picture.
+
+## Requirements
+
+It needed to be fast and lightweight since this INFT does network calls and has multiple images and animations.
+
+I chose to go with `Solid.js` with `Typescript` for type-safety, and did the `GraphQL` calls using native `fetch` to reduce the bundle size even more.
