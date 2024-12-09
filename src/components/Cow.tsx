@@ -35,7 +35,7 @@ const CowBody = ({ attack, life, maxLife, deleting }: Props): JSXElement => {
 		return (
 			<pre
 				style={{ "animation-delay": "2s", opacity: 0 }}
-				class="inline flex absolute justify-center cursor-pointer font-pixelcode text-sapphire animate-soul-escaping-body"
+				class="flex absolute justify-center cursor-pointer font-pixelcode text-sapphire animate-soul-escaping-body"
 			>
 				{`                 ^__^
                  (xx)\_________

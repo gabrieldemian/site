@@ -4,18 +4,19 @@ import Cow from "~/components/Cow";
 import { Button, Project } from "~/components/ui";
 import { Envelope, Github, Linkedin } from "~/components/ui/icons";
 import Base from "../layouts/Base.astro";
+
 const portfolioEntries = await getCollection("portfolio").then((data) =>
 	data.sort((a, b) => a.data.sortOrder - b.data.sortOrder),
 );
 ---
 
 <Base>
-  <!-- <section class="container max-w-[90ch]"></section> -->
   <section>
     <header class="container max-w-prose sm:my-20">
       <h1>
         Hello! I'm a <strong class="text-white">fullstack developer</strong> working with Rust, Typescript, React, and more.
       </h1>
+
       <div class="flex flex-col sm:flex-row justify-between mt-10 gap-2">
         <div class="flex flex-col sm:flex-row gap-2">
           <Button as="a" href="#about" class="shrink-0">About me</Button>

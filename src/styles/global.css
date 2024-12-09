@@ -2,312 +2,324 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-
-}
-
 @layer base {
-  @font-face {
-    font-family: "pixelcode";
-    src: url("../../public/fonts/pixelcode/PixelCode.otf");
-    font-weight: 400; /* normal */
-    font-style: normal;
-  }
+	@font-face {
+		font-family: "pixelcode";
+		src: url("/fonts/pixelcode/PixelCode.otf");
+		font-weight: 400;
+		/* normal */
+		font-style: normal;
+	}
 
-  @font-face {
-    font-family: "pixelcode";
-    src: url("../../public/fonts/pixelcode/PixelCode-Medium.otf");
-    font-weight: 600; /* normal */
-    font-style: normal;
-  }
+	@font-face {
+		font-family: "pixelcode";
+		src: url("/fonts/pixelcode/PixelCode-Medium.otf");
+		font-weight: 600;
+		/* normal */
+		font-style: normal;
+	}
 
-  @font-face {
-    font-family: "pixelcode";
-    src: url("../../public/fonts/pixelcode/PixelCode-Light.otf");
-    font-weight: 300;
-    font-style: normal;
-  }
+	@font-face {
+		font-family: "pixelcode";
+		src: url("/fonts/pixelcode/PixelCode-Light.otf");
+		font-weight: 300;
+		font-style: normal;
+	}
 
-  @font-face {
-    font-family: "pixelcode";
-    src: url("../../public/fonts/pixelcode/PixelCode-ExtraLight.otf");
-    font-weight: 200;
-    font-style: normal;
-  }
+	@font-face {
+		font-family: "pixelcode";
+		src: url("/fonts/pixelcode/PixelCode-ExtraLight.otf");
+		font-weight: 200;
+		font-style: normal;
+	}
 
-  @font-face {
-    font-family: "pixelcode";
-    src: url("../../public/fonts/pixelcode/PixelCode-Italic.otf");
-    font-weight: 400;
-    font-style: italic;
-  }
+	@font-face {
+		font-family: "pixelcode";
+		src: url("/fonts/pixelcode/PixelCode-Italic.otf");
+		font-weight: 400;
+		font-style: italic;
+	}
 
-  @font-face {
-    font-family: "pixelcode";
-    src: url("../../public/fonts/pixelcode/PixelCode-DemiBold.otf");
-    font-weight: 600;
-    font-style: normal;
-  }
+	@font-face {
+		font-family: "pixelcode";
+		src: url("/fonts/pixelcode/PixelCode-DemiBold.otf");
+		font-weight: 600;
+		font-style: normal;
+	}
 
-  @font-face {
-    font-family: "pixelcode";
-    src: url("../../public/fonts/pixelcode/PixelCode-Bold.otf");
-    font-weight: 700;
-    font-style: normal;
-  }
+	@font-face {
+		font-family: "pixelcode";
+		src: url("/fonts/pixelcode/PixelCode-Bold.otf");
+		font-weight: 700;
+		font-style: normal;
+	}
 
-  :root {
-    --step--1: clamp(1rem, calc(0.98rem + 0.11vw), 1.11rem);
-    --step-0: clamp(1.13rem, calc(1.1rem + 0.13vw), 1.25rem);
-    --step-1: clamp(1.27rem, calc(1.24rem + 0.14vw), 1.41rem);
-    --step-2: clamp(1.42rem, calc(1.39rem + 0.16vw), 1.58rem);
-    --step-3: clamp(1.6rem, calc(1.57rem + 0.18vw), 1.78rem);
-    --step-4: clamp(1.8rem, calc(1.76rem + 0.2vw), 2rem);
-    --step-5: clamp(2.03rem, calc(1.98rem + 0.23vw), 2.25rem);
-    --primary: var(--ctp-red);
-    --secondary: var(--ctp-mauve);
-  }
+	:root {
+		--step--1: clamp(1rem, calc(0.98rem + 0.11vw), 1.11rem);
+		--step-0: clamp(1.13rem, calc(1.1rem + 0.13vw), 1.25rem);
+		--step-1: clamp(1.27rem, calc(1.24rem + 0.14vw), 1.41rem);
+		--step-2: clamp(1.42rem, calc(1.39rem + 0.16vw), 1.58rem);
+		--step-3: clamp(1.6rem, calc(1.57rem + 0.18vw), 1.78rem);
+		--step-4: clamp(1.8rem, calc(1.76rem + 0.2vw), 2rem);
+		--step-5: clamp(2.03rem, calc(1.98rem + 0.23vw), 2.25rem);
+		--primary: var(--ctp-red);
+		--secondary: var(--ctp-mauve);
+	}
 
-  html,
-  body {
-    scroll-behavior: smooth;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    @apply text-subtext0 font-pixelcode bg-crust;
-  }
+	html,
+	body {
+		scroll-behavior: smooth;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		@apply text-subtext0 font-pixelcode bg-crust;
+	}
 
-  strong {
-    @apply text-text font-semibold;
-  }
+	strong {
+		@apply text-text font-semibold;
+	}
 
-  time {
-    @apply text-sm;
-  }
+	time {
+		@apply text-sm;
+	}
 
-  em {
-    @apply text-subtext1;
-  }
+	em {
+		@apply text-subtext1;
+	}
 
-  p,
-  a,
-  button,
-  span,
-  li {
-    @apply text-md;
-  }
+	p,
+	a,
+	button,
+	span,
+	li {
+		@apply text-md;
+	}
 
-  a {
-    @apply text-primary relative;
-  }
+	a {
+		@apply text-primary relative;
+	}
 
-  small,
-  .small {
-    font-size: var(--step--1);
-    @apply text-text;
-  }
+	small,
+	.small {
+		font-size: var(--step--1);
+		@apply text-text;
+	}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  label {
-    line-height: 3rem;
-    @apply !font-semibold text-subtext1;
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	label {
+		line-height: 3rem;
+		@apply !font-semibold text-subtext1;
+	}
 
-  h1 {
-    @apply text-4xl !important;
-  }
+	h1 {
+		@apply text-4xl !important;
+	}
 
-  h2 {
-    @apply text-3xl !important;
-  }
+	h2 {
+		@apply text-3xl !important;
+	}
 
-  h3 {
-    @apply text-2xl !important;
-  }
+	h3 {
+		@apply text-2xl !important;
+	}
 
-  h4 {
-    @apply text-xl !important;
-  }
+	h4 {
+		@apply text-xl !important;
+	}
 
-  h5 {
-    @apply text-lg !important;
-  }
+	h5 {
+		@apply text-lg !important;
+	}
 
-  h6 {
-    @apply text-md !important;
-  }
+	h6 {
+		@apply text-md !important;
+	}
 }
 
 @layer utilities {
-  .success {
-    @apply text-green;
-  }
-  .warning {
-    @apply text-peach;
-  }
-  .error {
-    @apply text-maroon;
-  }
-  .bg-active {
-    @apply bg-lavender;
-  }
-  .bg-inactive {
-    @apply bg-overlay0;
-  }
+	.success {
+		@apply text-green;
+	}
 
-  code {
-    @apply rounded-lg px-2 py-1 border border-red/25 text-primary font-thin text-sm;
-  }
+	.warning {
+		@apply text-peach;
+	}
 
-  pre code span {
-    @apply text-sm;
-  }
+	.error {
+		@apply text-maroon;
+	}
 
-  .glow,
-  .glow-text {
-    @apply relative;
-  }
+	.bg-active {
+		@apply bg-lavender;
+	}
 
-  .glow::after {
-    content: "";
-    @apply shadow-[0px_0px_0px_1px_rgba(var(--primary)),0_2px_30px_-2px_rgba(var(--primary))] text-primary inset-0 absolute w-full h-full rounded-lg opacity-0 duration-300 ease-linear transition-all;
-  }
+	.bg-inactive {
+		@apply bg-overlay0;
+	}
 
-  .glow-text,
-  .glow-text-secondary {
-    @apply duration-300 ease-linear;
-  }
+	code {
+		@apply rounded-lg px-2 py-1 border border-red/25 text-primary font-thin text-sm;
+	}
 
-  .glow-text:hover {
-    @apply text-primary drop-shadow-[0px_0px_8px_rgba(var(--primary))];
-  }
+	pre code span {
+		@apply text-sm;
+	}
 
-  .glow-text-secondary:hover {
-    @apply drop-shadow-[0_0_8px_rgba(var(--secondary))];
-  }
+	.glow,
+	.glow-text {
+		@apply relative;
+	}
 
-  .glow:hover::after,
-  .glow-text-secondary {
-    @apply opacity-100;
-  }
+	.glow::after {
+		content: "";
+		@apply shadow-[0px_0px_0px_1px_rgba(var(--primary)),0_2px_30px_-2px_rgba(var(--primary))] text-primary inset-0 absolute w-full h-full rounded-lg opacity-0 duration-300 ease-linear transition-all;
+	}
 
-  .cursor-sword {
-    cursor: url("/sword-cursor.png"), auto;
-  }
+	.glow-text,
+	.glow-text-secondary {
+		@apply duration-300 ease-linear;
+	}
 
-  pre.astro-code {
-    white-space: unset;
-    @apply !p-0 rounded-lg mb-5 !bg-base border border-overlay1/25;
-  }
+	.glow-text:hover {
+		@apply text-primary drop-shadow-[0px_0px_8px_rgba(var(--primary))];
+	}
 
-  pre.astro-code code {
-    @apply py-2;
-  }
+	.glow-text-secondary:hover {
+		@apply drop-shadow-[0_0_8px_rgba(var(--secondary))];
+	}
 
-  pre.astro-code code,
-  pre.astro-code code .line {
-    @apply w-full inline-block;
-  }
+	.glow:hover::after,
+	.glow-text-secondary {
+		@apply opacity-100;
+	}
 
-  pre.astro-code code .line {
-    counter-increment: listing;
-    @apply hover:bg-red/10 whitespace-nowrap;
-  }
+	.cursor-sword {
+		cursor: url("/sword-cursor.png"), auto;
+	}
 
-  pre.astro-code code .line::before {
-    content: counter(listing);
-    display: inline-block;
-    @apply w-10 ml-3 mt-1;
-  }
+	pre.astro-code {
+		white-space: unset;
+		@apply !p-0 rounded-lg mb-5 !bg-base border border-overlay1/25;
+	}
 
-  a[href^="https://"], a[href^="http://"]
-  {
-    color: rgba(var(--primary));
-  }
+	pre.astro-code code {
+		@apply py-2;
+	}
 
-  /*
+	pre.astro-code code,
+	pre.astro-code code .line {
+		@apply w-full inline-block;
+	}
+
+	pre.astro-code code .line {
+		counter-increment: listing;
+		@apply hover:bg-red/10 whitespace-nowrap;
+	}
+
+	pre.astro-code code .line::before {
+		content: counter(listing);
+		display: inline-block;
+		@apply w-10 ml-3 mt-1;
+	}
+
+	a[href^="https://"],
+	a[href^="http://"] {
+		color: rgba(var(--primary));
+	}
+
+	/*
   *   Only style <a> that beggings with `https://`
   *   that is not followed by an <img>
   **/
-  article a:not(:has(> img))[href^="https://"]:after,
-  .article a:not(:has(> img))[href^="https://"]:after,
-  {
-    content: "";
-    @apply duration-300 bottom-0 left-0 w-0 h-[1px] absolute bg-gradient-to-r from-red to-mauve;
-  }
+	article a:not(:has(> img))[href^="https://"]:after,
+	.article a:not(:has(> img))[href^="https://"]:after {
+		content: "";
+		@apply duration-300 bottom-0 left-0 w-0 h-[1px] absolute bg-gradient-to-r from-red to-mauve;
+	}
 
-  article a:not(:has(> img))[href^="https://"]:hover:after,
-  .article a:not(:has(> img))[href^="https://"]:hover:after
-  {
-    @apply w-full;
-  }
+	article a:not(:has(> img))[href^="https://"]:hover:after,
+	.article a:not(:has(> img))[href^="https://"]:hover:after {
+		@apply w-full;
+	}
 
-  article pre, .article pre {
-    @apply mb-5;
-  }
+	article pre,
+	.article pre {
+		@apply mb-5;
+	}
 
-  article, .article {
-    @apply mx-auto max-w-[60ch] container;
-  }
+	article,
+	.article {
+		@apply mx-auto max-w-[60ch] container;
+	}
 
-  article :is(h1, h2, h3, h4, h5, h6),
-  .article :is(h1, h2, h3, h4, h5, h6) {
-    @apply mb-5 text-slate-200 mt-10;
-  }
+	article :is(h1, h2, h3, h4, h5, h6),
+	.article :is(h1, h2, h3, h4, h5, h6) {
+		@apply mb-5 text-slate-200 mt-10;
+	}
 
-  article ul, .article ul {
-    @apply mb-5;
-  }
+	article ul,
+	.article ul {
+		@apply mb-5;
+	}
 
-  article ul li, .article ul li {
-    @apply list-inside mb-3;
-    list-style: square;
-    list-style-position: inside;
-  }
+	article ul li,
+	.article ul li {
+		@apply list-inside mb-3;
+		list-style: square;
+		list-style-position: inside;
+	}
 
-  article p, .article p {
-    @apply mb-5;
-  }
+	article p,
+	.article p {
+		@apply mb-5;
+	}
 
-  :not(pre, code, code span)::selection {
-    @apply bg-red text-white;
-  }
+	:not(pre, code, code span)::selection {
+		@apply bg-red text-white;
+	}
 
-  code span::selection,
-  code::selection {
-    @apply bg-slate-200/50;
-  }
-  button {
-    @apply font-thin;
-  }
-  section {
-    @apply mt-10;
-  }
-  img {
-    width: 100%;
-    height: auto;
-  }
-  code {
-    padding: 2px 5px;
-    @apply bg-surface0;
-  }
-  pre {
-    padding: 1rem;
-  }
-  pre > code {
-    all: unset;
-  }
-  blockquote {
-    border: 1px solid #999;
-    padding: 2px 0px 2px 20px;
-    margin: 0px;
-    font-style: italic;
-  }
+	code span::selection,
+	code::selection {
+		@apply bg-slate-200/50;
+	}
+
+	button {
+		@apply font-thin;
+	}
+
+	section {
+		@apply mt-10;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	code {
+		padding: 2px 5px;
+		@apply bg-surface0;
+	}
+
+	pre {
+		padding: 1rem;
+	}
+
+	pre > code {
+		all: unset;
+	}
+
+	blockquote {
+		border: 1px solid #999;
+		padding: 2px 0px 2px 20px;
+		margin: 0px;
+		font-style: italic;
+	}
 }

@@ -1,8 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import { GoBack } from "~/components/ui";
 import Base from "~/layouts/Base.astro";
 
-const posts = await Astro.glob("./*.mdx");
+const posts = await getCollection("blog");
 ---
 
 <Base>
@@ -17,16 +18,16 @@ const posts = await Astro.glob("./*.mdx");
       {
         posts.map((post) => (
           <li class="group flex rounded-md shadow-md justify-between bg-base hover:bg-crust duration-300 !ml-0">
-            <a class="flex p-2.5 justify-between w-full" href={post.url}>
+            <a class="flex p-2.5 justify-between w-full" href={`/blog/${post.id}`}>
               <div>
                 <p class="text-text font-bold mb-1 group-hover:text-primary group-hover:drop-shadow-[0px_0px_8px_rgba(var(--primary))] duration-300">
-                  {post.frontmatter.title}
+                  {post.data.title}
                 </p>
-                <p class="small mb-0">{post.frontmatter.description}</p>
+                <p class="small mb-0">{post.data.description}</p>
               </div>
-              <time>
-                <i class="text-subtext0">{post.frontmatter.pubDate}</i>
-              </time>
+                <time>
+                  <i class="text-subtext0">{post.data.pubDate.toLocaleDateString()}</i>
+                </time>
             </a>
           </li>
         ))

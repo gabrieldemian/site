@@ -1,12 +1,12 @@
 ---
-layout: ../../layouts/BlogPost.astro
 title: Learning distributed systems with BitTorrent
 description: My journey building a BitTorrent client from scratch using Rust
-pubDate: 14/11/2023
+pubDate: "Nov 14 2023"
+link: "https://github.com/gabrieldemian/vincenzo"
 hero: /images/vincenzo.webp
 ---
 
-import { CallOut } from '../../components/ui'
+import { CallOut } from '~/components/ui'
 
 I'm a simple man, one day I woke up thinking "How does BitTorrent works?" and just decided to learn the protocol and implement it, just for fun and curiosity.
 
@@ -36,7 +36,7 @@ And finally, I have learned a lot, a lot low level stuff that I truly lacked.
 
 ## How the protocol works
 
-<CallOut>
+<CallOut client:load>
   This is only a high-level and summarized explanation, refer to the [official
   documentation](https://www.bittorrent.org/beps/bep_0003.html)
 </CallOut>

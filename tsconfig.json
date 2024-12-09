@@ -1,12 +1,13 @@
 {
-	"extends": "astro/tsconfigs/strict",
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "astro/tsconfigs/strictest",
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["dist"],
 	"compilerOptions": {
-		"jsx": "preserve",
+		"strictNullChecks": true,
 		"jsxImportSource": "solid-js",
-		"resolveJsonModule": true,
-		"moduleResolution": "node",
-		"esModuleInterop": true,
-		"skipLibCheck": true,
+		"moduleResolution": "bundler",
+		"module": "esnext",
 		"baseUrl": "src/",
 		"paths": {
 			"~/components/*": ["components/*"],
